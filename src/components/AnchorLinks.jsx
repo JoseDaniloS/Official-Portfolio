@@ -1,24 +1,24 @@
 import { scrollToSection } from "../utils/functions";
 
-
-export function AnchorLinks({menuItems, footer}) {
+export function AnchorLinks({ menuItems }) {
   return (
-    <nav className={`flex text-[#FFFFFFDE] gap-[20px] ${footer ? "": "max-md:hidden"} text-base list-none font-medium`}>
-      {menuItems.map(item =>
+    <nav className={`text-[#FFFFFFDE] text-base list-none font-medium`}>
+      <ul className="flex flex-col items-center gap-[20px]">
+        {menuItems.map(item =>
           <li key={item.name}>
             <a
               href={item.href}
-              className="transition-colors duration-500 hover:text-white"
+              className="transition-colors duration-500 hover:text-red-800"
               onClick={e => {
                 e.preventDefault();
                 scrollToSection(item.href);
-                setShowMobile(false); // Fechar o menu após clicar
               }}
             >
               {item.name}
             </a>
           </li>
         )}
+      </ul>
     </nav>
   );
 }
