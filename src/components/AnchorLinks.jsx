@@ -1,6 +1,6 @@
 import { scrollToSection } from "../utils/functions";
 
-export function AnchorLinks({ menuItems }) {
+export function AnchorLinks({ menuItems, setMenuOpen }) {
   return (
     <nav className={`text-[#FFFFFFDE] text-base list-none font-medium`}>
       <ul className="flex flex-col items-center gap-[20px]">
@@ -12,6 +12,7 @@ export function AnchorLinks({ menuItems }) {
               onClick={e => {
                 e.preventDefault();
                 scrollToSection(item.href);
+                setMenuOpen(false); // Close the menu after clicking a link
               }}
             >
               {item.name}

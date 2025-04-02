@@ -8,58 +8,37 @@ export default function AboutMe() {
       className="w-full min-h-screen max-xl:h-full flex flex-col items-center justify-around py-[40px] gap-20 bg-[#121212]"
     >
       <TitleSections text="Sobre mim" />
-      <div className="h-full max-md:w-[90vw] md:w-[80%] max-md:flex-col text-white flex  gap-6 md:gap-12">
-        {/* Texto de apresentação */}
+      <div className="h-full max-md:w-[90vw] md:w-[80%] max-md:flex-col text-[#999] flex  gap-6 md:gap-12">
         <div className="w-full md:w-5/6 flex flex-col gap-6 items-center text-center md:text-left">
           <div className="flex flex-col gap-5 text-center md:text-left">
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-3xl text-white font-bold">
               Eu sou <span className="text-red-700">José Danilo,</span> um
-              desenvolvedor front-end e engenheiro de software
+              desenvolvedor front-end, CEO da{" "}
+              <span className="text-red-700">Chronos - Web Soluções</span> e
+              pesquisador no projeto Carcará.
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-              enim sequi eveniet delectus inventore eos est illo nesciunt sed,
-              veniam doloremque, distinctio officia corrupti ab voluptas at
-              explicabo mollitia soluta.
+              Sou apaixonado por desenvolvimento web e computação em nuvem,
+              sempre buscando criar soluções inovadoras e eficientes.
+              Atualmente, atuo como desenvolvedor front-end e líder da Chronos -
+              Web Soluções, onde ajudo empresas e profissionais a transformar
+              ideias em produtos digitais de alto impacto.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-              enim sequi eveniet delectus inventore eos est illo nesciunt sed,
-              veniam doloremque, distinctio officia corrupti ab voluptas at
-              explicabo mollitia soluta.
+              Além disso, faço parte do projeto de pesquisa Carcará na UFERSA,
+              onde contribuo para o desenvolvimento de sistemas que aprimoram a
+              infraestrutura de TI e a experiência acadêmica.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-              enim sequi eveniet delectus inventore eos est illo nesciunt sed,
-              veniam doloremque, distinctio officia corrupti ab voluptas at
-              explicabo mollitia soluta.
+              Meu foco está em desenvolver interfaces modernas, responsivas e de
+              alta performance, utilizando tecnologias como React, Tailwind CSS
+              e TypeScript. Acredito no aprendizado contínuo e na colaboração
+              para criar produtos digitais que realmente fazem a diferença.
             </p>
           </div>
         </div>
 
-        {/* Informações pessoais */}
-        <div className="flex flex-col gap-5 text-xl w-full md:w-auto">
-          <p className="border-b border-[#303030] py-2">
-            <span className="font-bold">Nome:</span> José Danilo
-          </p>
-          <p className="border-b border-[#303030] py-2">
-            <span className="font-bold">Email: </span>
-            <a
-              className="text-red-700"
-              href="mailto:danilojose.1d@gmail.com"
-              aria-label="Enviar email para José Danilo"
-            >
-              danilojose.1d@gmail.com
-            </a>
-          </p>
-          <p className="border-b border-[#303030] py-2">
-            <span className="font-bold">Idade:</span> 20 anos
-          </p>
-          <p className="border-b border-[#303030] py-2">
-            <span className="font-bold">De:</span> Pau dos Ferros, Rio Grande do
-            Norte
-          </p>
-        </div>
+        <PersonalInfo />
       </div>
 
       {/* Imagem e estatísticas */}
@@ -67,37 +46,61 @@ export default function AboutMe() {
         <img
           src={About_MeImage}
           alt="Foto de José Danilo"
+          loading="lazy"
           className=" max-xl:w-full xl:max-w-[600px] h-[400px] object-center object-cover rounded-lg"
         />
-        <div className="flex max-md:flex-col max-md:justify-center w-full text-[42px] gap-4">
-
-          <div className="text-center p-6">
-            <span aria-labelledby="anos-exp">4+</span>
-            <p id="anos-exp" className="text-[18px] text-nowrap">
-              Anos de Experiência
-            </p>
-          </div>
-
-          <div className="border max-md:w-full border-[#303030]" />
-
-          <div className="text-center p-6">
-            <span aria-labelledby="clientes">5+</span>
-            <p id="clientes" className="text-[18px] text-nowrap">
-              Clientes Satisfeitos
-            </p>
-          </div>
-
-          <div className="border max-md:w-full border-[#303030]" />
-
-          <div className="text-center p-6">
-            <span aria-labelledby="projetos">6+</span>
-            <p id="projetos" className="text-[18px] text-nowrap">
-              Projetos realizados
-            </p>
-          </div>
-
+        <legend>Participação no Evento Start-up Day 22/03/2025</legend>
+        {/* Estatísticas */}
+        <div className="md:w-[80%] max-md:w-[90vw] max-md:flex-col flex  justify-center md:justify-between text-[42px] gap-6">
+          <StatCard value="1+" label="Ano de Experiência" />
+          <StatCard value="5+" label="Clientes Satisfeitos" />
+          <StatCard value="6+" label="Projetos Realizados" />
         </div>
       </div>
     </div>
   );
 }
+
+// Componente de Estatística para evitar repetição
+function StatCard({ value, label }) {
+  return (
+    <div className="flex flex-col items-center text-center p-6">
+      <span className="font-bold">
+        {value}
+      </span>
+      <p className="text-[18px] text-[#999]">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function PersonalInfo() {
+    const personalData = [
+      { label: "Nome", value: "José Danilo" },
+      {
+        label: "Email",
+        value: (
+          <a
+            className="text-red-700"
+            href="mailto:danilojose.1d@gmail.com"
+            aria-label="Enviar email para José Danilo"
+          >
+            danilojose.1d@gmail.com
+          </a>
+        ),
+      },
+      { label: "Idade", value: "20 anos" },
+      { label: "De", value: "Pau dos Ferros, Rio Grande do Norte" },
+    ];
+  
+    return (
+      <div className="flex flex-col gap-5 text-xl w-full md:w-auto">
+        {personalData.map((item, index) => (
+          <p key={index} className="border-b border-[#303030] py-2">
+            <span className="font-bold text-white">{item.label}:</span> {item.value}
+          </p>
+        ))}
+      </div>
+    );
+  }

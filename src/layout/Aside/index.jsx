@@ -56,7 +56,7 @@ export default function Aside() {
             className="hover:scale-125 transition-all duration-300 focus:outline-none"
             key={index}
           >
-            <img src={link.src} alt={link.alt} className="w-6" />
+            <img src={link.src} alt={link.alt} loading="lazy" className="w-6" />
           </a>
         )}
       </div>
