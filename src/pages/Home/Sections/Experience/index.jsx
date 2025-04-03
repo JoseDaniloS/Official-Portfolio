@@ -7,14 +7,14 @@ import Lambda from "/HabilidadesIcons/icons8-awslambda.svg";
 import TailwindCSS from "/HabilidadesIcons/icons8-tailwindcss.svg";
 import AWS from "/HabilidadesIcons/icons8-aws.svg";
 import TypeScript from "/HabilidadesIcons/icons8-texto-datilografado.svg";
-import Postman from "/HabilidadesIcons/icons8-postman-inc-48.png";
-import React from "/HabilidadesIcons/icons8-react-48.png";
+import Postman from "/HabilidadesIcons/icons8-postman-inc-48.webp";
+import React from "/HabilidadesIcons/icons8-react-48.webp";
 import MongoDB from "/HabilidadesIcons/MongoDB.svg";
 import Route53 from "/HabilidadesIcons/Route_53.svg";
 import APIGateway from "/HabilidadesIcons/API_Gateway.svg";
 import Amplify from "/HabilidadesIcons/Amplify.svg";
 import DynamoDB from "/HabilidadesIcons/DynamoDB.svg";
-import Carcara from "/HabilidadesIcons/Carcara.png";
+import Carcara from "/HabilidadesIcons/Carcara.webp";
 import Chronos from "/HabilidadesIcons/Chronos.svg";
 
 export default function Experience() {
@@ -36,39 +36,41 @@ export default function Experience() {
   ];
 
   return (
-    <div
+    <section
       id="experience"
-      className="w-full min-h-screen flex flex-col py-[40px] gap-20 items-center justify-around bg-[#303030]"
+      className="w-full min-h-screen flex flex-col py-16 gap-16 items-center justify-around bg-[#303030]"
     >
       <TitleSections text="Experiência" />
-      <div className="md:w-[80%] max-md:w-[90vw] max-md:flex-col flex gap-20 justify-center text-white h-full">
-        {experiences.map((exp, index) =>
-          <ExperienceCard key={index} {...exp} />
-        )}
+      <div className="md:w-[80%] max-md:w-[90vw] flex flex-wrap justify-center gap-8 text-white">
+        {experiences.map(exp => <ExperienceCard key={exp.project} {...exp} />)}
       </div>
-      <Habilidades />
-    </div>
+      <SoftSkills />
+      <HardSkills />
+    </section>
   );
 }
 
 function ExperienceCard({ logo, cargo, project, start, end }) {
   return (
-    <div className="max-md:w-full w-[500px] h-[350px] border-[#444] border shadow-2xl p-5 px-10 flex flex-col gap-5 justify-evenly rounded-[10px] text-white">
-      <img src={logo} alt={`Logo de ${project}`} className="h-5/12" />
-
-      <div className="flex flex-col gap-3">
-        <h1 className="text-xl font-semibold">
-          <span className="text-red-600">{cargo}</span> <br/> {project}
-        </h1>
-        <p className="font-bold">
-          {start} - {end}
-        </p>
-      </div>
+    <div className="w-[500px] max-w-full min-w-[300px] bg-[#181818] p-6 flex flex-col items-center gap-4 rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#202020]">
+      <img
+        src={logo}
+        alt={logo ? `Logo do projeto ${project}` : "Imagem não disponível"}
+        className="h-16 object-contain"
+      />
+      <h2 className="text-xl font-semibold text-center text-red-500">
+        {cargo}
+      </h2>
+      <p className="font-medium text-md">{project}</p>
+      <p className="text-sm font-light">
+        <time dateTime={start}>{start}</time> - <time dateTime={end}>{end}</time>
+      </p>
     </div>
   );
 }
 
-function Habilidades() {
+
+function HardSkills() {
   const habilidades = [
     { nome: "HTML5", icon: HTML },
     { nome: "CSS3", icon: CSS },
@@ -87,26 +89,57 @@ function Habilidades() {
   ];
 
   return (
-    <div className="md:w-[80%] max-md:w-[90vw] flex flex-col justify-center gap-5">
-      <h1 className="text-2xl font-extrabold text-center text-white">
+    <section className="md:w-[80%] max-md:w-[90vw] flex flex-col justify-center gap-5">
+      <h2 className="text-2xl font-extrabold text-center text-white">
         Hard Skills
-      </h1>
-      <div className="w-full justify-center flex-wrap flex gap-7 items-center">
-        {habilidades.map((hab, index) =>
-          <HabilidadeCard key={index} Habilidade={hab.nome} Icon={hab.icon} />
+      </h2>
+      <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-7 justify-center items-center">
+        {habilidades.map(hab =>
+          <HardSkillCard key={hab.nome} Habilidade={hab.nome} Icon={hab.icon} />
         )}
       </div>
+    </section>
+  );
+}
+
+function HardSkillCard({ Habilidade, Icon }) {
+  return (
+    <div className="flex flex-col items-center bg-[#181818] text-white p-6 rounded-xl shadow-md border border-[#303030] transition-all duration-300 hover:scale-105 hover:border-red-500 hover:shadow-lg">
+      <img src={Icon} alt={`Ícone de ${Habilidade}`} className="w-14 h-14 object-contain" />
+      <span className="mt-3 text-sm font-semibold text-gray-300">
+        {Habilidade}
+      </span>
     </div>
   );
 }
 
-function HabilidadeCard({ Habilidade, Icon }) {
+function SoftSkills() {
+  const skills = [
+    "Trabalho em equipe",
+    "Comunicação",
+    "Resolução de problemas",
+    "Adaptabilidade",
+    "Liderança",
+    "Pensamento crítico",
+    "Gestão de tempo",
+    "Criatividade"
+  ];
+
   return (
-    <div className="flex flex-col text-red-800 items-center border-b-4 border-red-800 bg-[#0E0E0E] text-center p-5 hover:scale-115 transition-all duration-300 rounded-tl-[30%] gap-2">
-      <span className="font-bold">
-        {Habilidade}
-      </span>
-      <img src={Icon} alt={Habilidade} className="w-12 h-12" />
-    </div>
+    <section className="md:w-[80%] max-md:w-[90vw] flex flex-col justify-center gap-5">
+      <h2 className="text-2xl font-extrabold text-center text-white">
+        Soft Skills
+      </h2>
+      <div className="flex flex-wrap justify-center gap-4">
+        {skills.map((skill, index) =>
+          <div
+            key={index}
+            className="px-5 py-2 bg-[#0E0E0E] text-red-500 font-semibold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:bg-red-500 hover:text-white"
+          >
+            {skill}
+          </div>
+        )}
+      </div>
+    </section>
   );
 }

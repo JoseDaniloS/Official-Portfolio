@@ -3,7 +3,7 @@ import Github_Icon from "/Github_Icon.svg";
 import Linkedin_Icon from "/Linkedin_Icon.svg";
 import Instagram_Icon from "/Instagram_Icon.svg";
 
-import Danilo from "/Danilo.png";
+import Danilo from "/Danilo.webp";
 
 export default function Aside() {
   const menuItems = [
