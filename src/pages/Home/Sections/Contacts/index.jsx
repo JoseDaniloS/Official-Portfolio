@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import TitleSections from "../../../../components/TitleSections";
 import ContactForm from "./components/ContactForm";
 import SocialLinks from "./components/SocialLinks";
+import { motionConfig } from "../../../../utils/functions";
 
 export default function Contacts() {
   return (
@@ -12,11 +13,8 @@ export default function Contacts() {
       <TitleSections text="Contato" />
 
       <motion.p
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
-        transition={{ duration: 0.8 }}
-        className="text-3xl text-[#bbb] font-bold md:w-[80%] max-md:w-[90vw] mb-10"
+        {...motionConfig}
+        className="text-3xl text-[#bbb] font-bold md:w-[80%] max-md:w-[90vw] max-md:text-2xl"
       >
         Estou disponível para colaborações e novos desafios! Entre em contato
         pelo formulário ou redes sociais abaixo.

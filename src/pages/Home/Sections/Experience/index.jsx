@@ -17,6 +17,7 @@ import DynamoDB from "/HabilidadesIcons/DynamoDB.svg";
 import Carcara from "/HabilidadesIcons/Carcara.webp";
 import Chronos from "/HabilidadesIcons/Chronos.svg";
 import { motion } from "motion/react";
+import { motionConfig } from "../../../../utils/functions";
 
 export default function Experience() {
   const experiences = [
@@ -54,10 +55,7 @@ export default function Experience() {
 function ExperienceCard({ logo, cargo, project, start, end }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
-      transition={{ duration: 0.8 }}
+    {...motionConfig}
       className="w-[500px] max-w-full min-w-[300px] bg-[#181818] p-6 flex flex-col items-center gap-4 rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#202020]"
     >
       <img
@@ -114,10 +112,7 @@ function HardSkills() {
 function HardSkillCard({ Habilidade, Icon }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
-      transition={{ duration: 0.8 }}
+    {...motionConfig}
       className="flex flex-col items-center bg-[#181818] text-white p-6 rounded-xl shadow-md border border-[#303030] transition-all duration-300 hover:scale-105 hover:border-red-500 hover:shadow-lg"
     >
       <img
@@ -152,10 +147,7 @@ function SoftSkills() {
       <div className="flex flex-wrap justify-center gap-4">
         {skills.map((skill, index) =>
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
-            transition={{ duration: 0.8 }}
+          {...motionConfig}
             key={index}
             className="px-5 py-2 bg-[#0E0E0E] text-red-500 font-semibold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:bg-red-500 hover:text-white"
           >

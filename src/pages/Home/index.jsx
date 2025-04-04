@@ -12,15 +12,14 @@ import { useState } from "react";
 
 export default function Home() {
 
-  const [headerHeight, setHeaderHeight] = useState(0);
 
   return (
     <main className="w-full h-full justify-end flex">
       <ReturnToTop />
-      <Header setHeaderHeight={setHeaderHeight} />
+      <Header />
       <Aside />
       <div className="w-4/5 max-lg:w-full h-full flex flex-col overflow-x-hidden">
-        <Center headerHeight={headerHeight} />
+        <Center />
         <AboutMe />
         <Experience />
         <Projects />

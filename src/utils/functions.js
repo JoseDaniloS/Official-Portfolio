@@ -20,3 +20,11 @@ export const handleClick = () => {
     behavior: "smooth"
   });
 };
+
+export const motionConfig = {
+  initial: { opacity: 0, y: -100 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.2 },
+  transition: { duration: 0.5, ease: [0.42, 0, 0.58, 1] },
+};
+

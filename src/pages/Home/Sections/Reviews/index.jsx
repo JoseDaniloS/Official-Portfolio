@@ -7,6 +7,7 @@ import StarRed from "/FeedbacksIcons/StarRed.png";
 import StarWhite from "/FeedbacksIcons/StarWhite.png";
 import { reviews } from "../../../../database/Feedbacks";
 import { motion } from "motion/react";
+import { motionConfig } from "../../../../utils/functions";
 
 export default function Reviews() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -32,15 +33,12 @@ export default function Reviews() {
   return (
     <div
       id="reviews"
-      className="w-full min-h-screen flex flex-col items-center justify-around bg-[#303030] py-20"
+      className="w-full h-full flex flex-col items-center justify-around gap-20 bg-[#303030] py-20"
     >
       <TitleSections text="Feedbacks" />
       <motion.p
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
-        transition={{ duration: 0.8 }}
-        className="text-3xl text-[#bbb] font-bold md:w-[80%] max-md:w-[90vw] mb-10"
+        {...motionConfig}
+        className="text-3xl max-md:text-2xl text-[#bbb] font-bold md:w-[80%] max-md:w-[90vw] mb-10"
       >
         Esses depoimentos refletem a experiência de profissionais com os quais
         tive o privilégio de colaborar.<br />Agradeço a cada um pela confiança e
@@ -51,7 +49,7 @@ export default function Reviews() {
         spaceBetween={40}
         onSwiper={swiper => (swiperRef.current = swiper)}
         onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
-        className="md:w-[80%] max-md:w-[90vw]"
+        className="md:w-[80%] overflow-auto max-md:w-[90vw]"
         breakpoints={{
           320: { slidesPerView: 1 },
           768: { slidesPerView: 1.3 },
@@ -83,10 +81,11 @@ export default function Reviews() {
 function ReviewCard({ name, role, image, feedback, stars }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
-      transition={{ duration: 0.8 }}
+      
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
       className="bg-[#181818] p-6 flex flex-col gap-4 rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#202020]"
     >
       <div className="flex items-center justify-between mb-4">

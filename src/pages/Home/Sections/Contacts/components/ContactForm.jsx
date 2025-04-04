@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { motion } from "motion/react";
+import { motionConfig } from "../../../../../utils/functions";
 
 export default function ContactForm() {
   const form = useRef();
@@ -29,10 +30,7 @@ export default function ContactForm() {
 
   return (
     <motion.form
-      initial={{ opacity: 0, y: -100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
-      transition={{ duration: 0.5 }}
+      {...motionConfig}
       ref={form}
       onSubmit={sendEmail}
       className="flex flex-col gap-4 md:w-[80%] max-md:w-[90vw] mt-6"

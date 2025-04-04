@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import TitleSections from "../../../../components/TitleSections";
 import About_MeImage from "/About_Me.webp";
+import { motionConfig } from "../../../../utils/functions";
 
 export default function AboutMe() {
   return (
@@ -10,15 +11,12 @@ export default function AboutMe() {
     >
       <TitleSections text="Sobre mim" />
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
-        transition={{ duration: 0.8 }}
+        {...motionConfig}
         className="h-full max-md:w-[90vw] md:w-[80%] max-md:flex-col text-[#999] flex  gap-6 md:gap-12"
       >
         <div className="w-full md:w-5/6 flex flex-col gap-6 items-center text-left">
           <div className="flex flex-col gap-5 md:text-left">
-            <h2 className="text-3xl text-white font-bold">
+            <h2 className="text-3xl max-md:text-2xl text-white font-bold">
               Eu sou <span className="text-red-500">José Danilo</span>, um
               <strong> desenvolvedor front-end</strong>, CEO da
               <span className="text-red-500"> Chronos - Web Soluções</span> e
@@ -56,10 +54,7 @@ export default function AboutMe() {
 
       {/* Imagem e estatísticas */}
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
-        transition={{ duration: 0.8 }}
+        {...motionConfig}
         className="flex flex-col text-white max-md:w-[90vw] md:w-[80%] gap-6"
       >
         <img
