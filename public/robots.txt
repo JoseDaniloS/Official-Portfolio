@@ -1,3 +1,3 @@
 User-agent: *
-Disallow:
-Sitemap: https://seusite.com.br/sitemap.xml
+Allow: /
+Sitemap: https://jdanilo.ufersa.dev.br/sitemap.xml
