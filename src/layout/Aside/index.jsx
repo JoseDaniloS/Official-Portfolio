@@ -43,9 +43,15 @@ export default function Aside() {
       {/* Menu de Navegação */}
       <div className="h-full flex flex-col gap-14">
         <AnchorLinks menuItems={menuItems} />
-        <button className="bg-red-800 hover:bg-red-700 font-bold py-2 px-10 rounded-[20px] cursor-pointer transition-all">
+        <a
+          href="https://wa.link/xlj5un"
+          aria-label="Enviar mensagem para José Danilo pelo WhatsApp"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-red-800 hover:bg-red-700 font-bold py-2 px-10 rounded-[20px] cursor-pointer transition-all"
+        >
           Enviar Mensagem
-        </button>
+        </a>
       </div>
 
       {/* Redes Sociais */}

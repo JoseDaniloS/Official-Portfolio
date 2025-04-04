@@ -18,9 +18,9 @@ export default function Center() {
         </h2>
       </div>
 
-      <a href="#contact" className="py-3 relative font-semibold border-red-900 border-2 px-8 rounded-4xl cursor-pointer transition-all duration-300 hover:bg-[#99101030] hover:scale-110">
+      <button className="py-3 relative font-semibold border-red-900 border-2 px-8 rounded-4xl cursor-pointer transition-all duration-300 hover:bg-[#99101030] hover:scale-110">
         Entre em contato
-      </a>
+      </button>
     </section>
   );
 }

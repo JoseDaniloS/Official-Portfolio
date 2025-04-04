@@ -9,3 +9,14 @@ export function scrollToSection(id) {
   const element = document.getElementById(id);
   element?.scrollIntoView({ behavior: "smooth" });
 }
+
+/**
+ * Função para lidar com o clique no botão "Voltar ao topo".
+ * Realiza um scroll suave para o topo da página.
+ */
+export const handleClick = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
