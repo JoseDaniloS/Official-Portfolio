@@ -7,7 +7,7 @@ export const reviews = [
       image: PedroArthur,
       stars: 5,
       feedback:
-        "Trabalhar com o Danilo foi uma experiência incrível. Ele é um desenvolvedor dedicado, proativo e sempre disposto a encontrar as melhores soluções."
+        "Trabalhar com o Danilo foi uma experiência incrível. Ele é um desenvolvedor dedicado, proativo e sempre disposto a encontrar as melhores soluções."
     },
     {
       name: "Anthony Silva",

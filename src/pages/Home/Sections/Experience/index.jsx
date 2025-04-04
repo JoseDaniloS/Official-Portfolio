@@ -16,6 +16,7 @@ import Amplify from "/HabilidadesIcons/Amplify.svg";
 import DynamoDB from "/HabilidadesIcons/DynamoDB.svg";
 import Carcara from "/HabilidadesIcons/Carcara.webp";
 import Chronos from "/HabilidadesIcons/Chronos.svg";
+import { motion } from "motion/react";
 
 export default function Experience() {
   const experiences = [
@@ -52,7 +53,13 @@ export default function Experience() {
 
 function ExperienceCard({ logo, cargo, project, start, end }) {
   return (
-    <div className="w-[500px] max-w-full min-w-[300px] bg-[#181818] p-6 flex flex-col items-center gap-4 rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#202020]">
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
+      transition={{ duration: 0.8 }}
+      className="w-[500px] max-w-full min-w-[300px] bg-[#181818] p-6 flex flex-col items-center gap-4 rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#202020]"
+    >
       <img
         src={logo}
         alt={logo ? `Logo do projeto ${project}` : "Imagem não disponível"}
@@ -61,14 +68,16 @@ function ExperienceCard({ logo, cargo, project, start, end }) {
       <h2 className="text-xl font-semibold text-center text-red-500">
         {cargo}
       </h2>
-      <p className="font-medium text-md">{project}</p>
-      <p className="text-sm font-light">
-        <time dateTime={start}>{start}</time> - <time dateTime={end}>{end}</time>
+      <p className="font-medium text-md">
+        {project}
       </p>
-    </div>
+      <p className="text-sm font-light">
+        <time dateTime={start}>{start}</time> -{" "}
+        <time dateTime={end}>{end}</time>
+      </p>
+    </motion.div>
   );
 }
-
 
 function HardSkills() {
   const habilidades = [
@@ -104,12 +113,22 @@ function HardSkills() {
 
 function HardSkillCard({ Habilidade, Icon }) {
   return (
-    <div className="flex flex-col items-center bg-[#181818] text-white p-6 rounded-xl shadow-md border border-[#303030] transition-all duration-300 hover:scale-105 hover:border-red-500 hover:shadow-lg">
-      <img src={Icon} alt={`Ícone de ${Habilidade}`} className="w-14 h-14 object-contain" />
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
+      transition={{ duration: 0.8 }}
+      className="flex flex-col items-center bg-[#181818] text-white p-6 rounded-xl shadow-md border border-[#303030] transition-all duration-300 hover:scale-105 hover:border-red-500 hover:shadow-lg"
+    >
+      <img
+        src={Icon}
+        alt={`Ícone de ${Habilidade}`}
+        className="w-14 h-14 object-contain"
+      />
       <span className="mt-3 text-sm font-semibold text-gray-300">
         {Habilidade}
       </span>
-    </div>
+    </motion.div>
   );
 }
 
@@ -132,12 +151,16 @@ function SoftSkills() {
       </h2>
       <div className="flex flex-wrap justify-center gap-4">
         {skills.map((skill, index) =>
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
+            transition={{ duration: 0.8 }}
             key={index}
             className="px-5 py-2 bg-[#0E0E0E] text-red-500 font-semibold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:bg-red-500 hover:text-white"
           >
             {skill}
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

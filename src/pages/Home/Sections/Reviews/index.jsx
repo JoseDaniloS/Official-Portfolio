@@ -6,9 +6,9 @@ import { useEffect, useRef, useState } from "react";
 import StarRed from "/FeedbacksIcons/StarRed.png";
 import StarWhite from "/FeedbacksIcons/StarWhite.png";
 import { reviews } from "../../../../database/Feedbacks";
+import { motion } from "motion/react";
 
 export default function Reviews() {
-
   const [activeIndex, setActiveIndex] = useState(0);
   const [dotsCount, setDotsCount] = useState(reviews.length); // Controla quantos indicadores serão mostrados
   const swiperRef = useRef(null);
@@ -35,11 +35,17 @@ export default function Reviews() {
       className="w-full min-h-screen flex flex-col items-center justify-around bg-[#303030] py-20"
     >
       <TitleSections text="Feedbacks" />
-      <p className="text-3xl text-[#bbb] font-bold md:w-[80%] max-md:w-[90vw] mb-10">
+      <motion.p
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
+        transition={{ duration: 0.8 }}
+        className="text-3xl text-[#bbb] font-bold md:w-[80%] max-md:w-[90vw] mb-10"
+      >
         Esses depoimentos refletem a experiência de profissionais com os quais
         tive o privilégio de colaborar.<br />Agradeço a cada um pela confiança e
         parceria ao longo dos projetos.
-      </p>
+      </motion.p>
 
       <Swiper
         spaceBetween={40}
@@ -48,7 +54,8 @@ export default function Reviews() {
         className="md:w-[80%] max-md:w-[90vw]"
         breakpoints={{
           320: { slidesPerView: 1 },
-          768: { slidesPerView: 2 }
+          768: { slidesPerView: 1.3 },
+          1024: { slidesPerView: 2 }
         }}
       >
         {reviews.map((review, index) =>
@@ -75,7 +82,13 @@ export default function Reviews() {
 
 function ReviewCard({ name, role, image, feedback, stars }) {
   return (
-    <div className="bg-[#181818] p-6 flex flex-col gap-4 rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#202020]">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }} // só anima uma vez, quando 20% do elemento estiver visível
+      transition={{ duration: 0.8 }}
+      className="bg-[#181818] p-6 flex flex-col gap-4 rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#202020]"
+    >
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-4">
           <img
@@ -92,7 +105,7 @@ function ReviewCard({ name, role, image, feedback, stars }) {
             </h3>
           </div>
         </div>
-        <div className="flex gap-1">
+        <div className="flex flex-wrap gap-1">
           {Array.from({ length: 5 }).map(
             (_, index) =>
               index < stars
@@ -114,6 +127,6 @@ function ReviewCard({ name, role, image, feedback, stars }) {
       <blockquote className="text-[#bbb] border-l-2 pl-3 border-[#bbb] italic">
         “{feedback}”
       </blockquote>
-    </div>
+    </motion.div>
   );
 }

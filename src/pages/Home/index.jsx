@@ -8,15 +8,19 @@ import Reviews from "./Sections/Reviews";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import ReturnToTop from "../../components/ReturnToTop";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [headerHeight, setHeaderHeight] = useState(0);
+
   return (
     <main className="w-full h-full justify-end flex">
       <ReturnToTop />
-      <Header />
+      <Header setHeaderHeight={setHeaderHeight} />
       <Aside />
       <div className="w-4/5 max-lg:w-full h-full flex flex-col overflow-x-hidden">
-        <Center />
+        <Center headerHeight={headerHeight} />
         <AboutMe />
         <Experience />
         <Projects />

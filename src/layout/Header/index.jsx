@@ -2,7 +2,7 @@ import Hamburger from "hamburger-react";
 import { useEffect, useRef, useState } from "react";
 import { AnchorLinks } from "../../components/AnchorLinks";
 
-export default function Header() {
+export default function Header({ setHeaderHeight}) {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const headerRef = useRef(null);
@@ -28,6 +28,11 @@ export default function Header() {
     { name: "Contato", href: "contact" }
   ];
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Dynamic header height
+  if(headerRef.current) {
+    setHeaderHeight(headerRef.current.clientHeight);
+  }
 
   return (
     <header
