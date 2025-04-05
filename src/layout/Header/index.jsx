@@ -35,7 +35,7 @@ export default function Header() {
       className={`w-full hidden max-lg:block p-5 fixed top-0 left-0 bg-[#0E0E0E] transition-all duration-500
           ${isHeaderVisible
             ? "translate-y-0"
-            : "-translate-y-full"} shadow-md z-50`}
+            : "-translate-y-full"} shadow-md z-30`}
     >
       <div className="flex items-center relative z-10 justify-between w-full">
         <h1 className="text-3xl font-bold text-white">
