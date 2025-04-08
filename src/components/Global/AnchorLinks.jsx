@@ -1,4 +1,4 @@
-import { scrollToSection } from "../utils/functions";
+import { scrollToSection } from "../../utils/functions";
 
 export function AnchorLinks({ menuItems, setMenuOpen }) {
   return (
@@ -12,7 +12,7 @@ export function AnchorLinks({ menuItems, setMenuOpen }) {
               onClick={e => {
                 e.preventDefault();
                 scrollToSection(item.href);
-                setMenuOpen(false); // Close the menu after clicking a link
+                setMenuOpen(false);
               }}
             >
               {item.name}

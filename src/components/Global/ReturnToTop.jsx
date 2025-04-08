@@ -1,4 +1,4 @@
-import { handleClick } from "../utils/functions";
+import { handleClick } from "../../utils/functions";
 
 export default function ReturnToTop() {
 

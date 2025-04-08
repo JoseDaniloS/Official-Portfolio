@@ -32,7 +32,7 @@ export const ProjectsInfo = [
         image: Carcara,
         sourceCode: false,
         stacks: ["React", "Tailwind CSS"],
-        authors: ["José Danilo"],
+        authors: ["José Danilo", "Yuri Nascimento"],
         linkRepositorio: "https://example.com/project2",
         url: "https://carcara.ufersa.dev.br",
     },
@@ -48,7 +48,7 @@ export const ProjectsInfo = [
         image: ELI,
         sourceCode: false,
         stacks: ["React", "Tailwind CSS"],
-        authors: ["José Danilo"],
+        authors: ["José Danilo", "Yuri Nascimento"],
         linkRepositorio: "https://example.com/project3",
         url: "https://eli.ufersa.dev.br",
     },
@@ -74,9 +74,9 @@ export const ProjectsInfo = [
         title: "Weather App",
         shortDescription: "Aplicativo para consulta do clima em tempo real",
         description: [
-        "Aplicação web desenvolvida com React e Tailwind CSS que permite ao usuário consultar as condições climáticas de qualquer cidade em tempo real.",
-        "Utiliza a API OpenWeather para fornecer informações como temperatura, sensação térmica, umidade e descrição do tempo.",
-        "O design é responsivo e otimizado para diferentes dispositivos, proporcionando uma experiência fluida e acessível."
+            "Aplicação web desenvolvida com React e Tailwind CSS que permite ao usuário consultar as condições climáticas de qualquer cidade em tempo real.",
+            "Utiliza a API OpenWeather para fornecer informações como temperatura, sensação térmica, umidade e descrição do tempo.",
+            "O design é responsivo e otimizado para diferentes dispositivos, proporcionando uma experiência fluida e acessível."
         ],
         image: WeatherApp,
         stacks: ["React", "Tailwind CSS"],
@@ -84,6 +84,6 @@ export const ProjectsInfo = [
         sourceCode: true,
         linkRepositorio: "https://github.com/JoseDaniloS/WeatherApp",
         url: "https://weather-app-pearl-gamma-18.vercel.app"
-        }
+    }
 ];
 

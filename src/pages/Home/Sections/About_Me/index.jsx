@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import TitleSections from "../../../../components/TitleSections";
+import TitleSections from "../../../../components/Global/TitleSections";
 import About_MeImage from "/About_Me.webp";
 import { motionConfig } from "../../../../utils/functions";
 
@@ -59,7 +59,7 @@ export default function AboutMe() {
       >
         <img
           src={About_MeImage}
-          alt="José Danilo - Desenvolvedor Front-end e CEO da Chronos - Web Soluções"
+          alt="Participação no Evento Start-up Day 22/03/2025"
           loading="lazy"
           className=" max-xl:w-full xl:max-w-[600px] h-[400px] object-center object-cover rounded-lg"
         />

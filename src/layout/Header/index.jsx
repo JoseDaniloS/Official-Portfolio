@@ -1,6 +1,6 @@
 import Hamburger from "hamburger-react";
 import { useEffect, useRef, useState } from "react";
-import { AnchorLinks } from "../../components/AnchorLinks";
+import { AnchorLinks } from "../../components/Global/AnchorLinks";
 
 export default function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);

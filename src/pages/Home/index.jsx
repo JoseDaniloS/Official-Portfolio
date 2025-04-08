@@ -7,8 +7,8 @@ import Projects from "./Sections/Projects";
 import Reviews from "./Sections/Reviews";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
-import ReturnToTop from "../../components/ReturnToTop";
-import { useState } from "react";
+import ReturnToTop from "../../components/Global/ReturnToTop";
+
 
 export default function Home() {
 

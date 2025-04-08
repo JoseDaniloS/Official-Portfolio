@@ -1,9 +1,10 @@
-import { AnchorLinks } from "../../components/AnchorLinks";
+
 import Github_Icon from "/Github_Icon.svg";
 import Linkedin_Icon from "/Linkedin_Icon.svg";
 import Instagram_Icon from "/Instagram_Icon.svg";
 
 import Danilo from "/Danilo.webp";
+import { AnchorLinks } from "../../components/Global/AnchorLinks";
 
 export default function Aside() {
   const menuItems = [
@@ -33,7 +34,7 @@ export default function Aside() {
     }
   ];
   return (
-    <div className="w-1/5 max-lg:hidden h-screen fixed left-0 text-[#FFFFFFDE] bg-[#0E0E0E] flex flex-col justify-around items-center">
+    <div className="w-1/5 max-lg:hidden h-full overflow-auto fixed left-0 text-[#FFFFFFDE] bg-[#0E0E0E] flex flex-col justify-around items-center">
       {/* Foto de Perfil */}
       <div className="w-full h-1/2 flex flex-col justify-center items-center p-10 gap-[10px]">
         <img src={Danilo} alt="Foto de Perfil José Danilo" />
@@ -41,14 +42,14 @@ export default function Aside() {
       </div>
 
       {/* Menu de Navegação */}
-      <div className="h-full flex flex-col gap-14">
+      <div className="h-full w-2/4 text-center mb-2 flex flex-col gap-14">
         <AnchorLinks menuItems={menuItems} />
         <a
           href="https://wa.link/xlj5un"
           aria-label="Enviar mensagem para José Danilo pelo WhatsApp"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-red-800 hover:bg-red-700 font-bold py-2 px-10 rounded-[20px] cursor-pointer transition-all"
+          className="bg-red-800 hover:bg-red-700 font-bold py-2 w-full rounded-[20px] cursor-pointer transition-all"
         >
           Enviar Mensagem
         </a>

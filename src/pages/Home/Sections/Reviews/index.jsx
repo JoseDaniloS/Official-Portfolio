@@ -1,4 +1,4 @@
-import TitleSections from "../../../../components/TitleSections";
+import TitleSections from "../../../../components/Global/TitleSections";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,16 +8,17 @@ import StarWhite from "/FeedbacksIcons/StarWhite.png";
 import { reviews } from "../../../../database/Feedbacks";
 import { motion } from "motion/react";
 import { motionConfig } from "../../../../utils/functions";
+import { CustomPagination } from "../../../../components/Global/CustomPagination";
 
 export default function Reviews() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [dotsCount, setDotsCount] = useState(reviews.length); // Controla quantos indicadores serão mostrados
   const swiperRef = useRef(null);
-
+  const SMARTPHONE_WIDTH = 768;
   // Atualiza a quantidade de indicadores com base no tamanho da tela
   useEffect(() => {
     const updateDots = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= SMARTPHONE_WIDTH) {
         setDotsCount(reviews.length - 1); // Em telas maiores, mostra metade dos pontos
       } else {
         setDotsCount(reviews.length); // Em telas menores, mostra todos os pontos
@@ -63,17 +64,7 @@ export default function Reviews() {
         )}
       </Swiper>
 
-      <div className="flex gap-[4px] mt-4">
-        {Array.from({ length: dotsCount }).map((_, index) =>
-          <div
-            key={index}
-            className={`w-[32px] h-[2px] rounded-[99px] transition-all duration-300 ${index ===
-            activeIndex
-              ? "bg-red-600"
-              : "bg-[#FFFFFF1A]"}`}
-          />
-        )}
-      </div>
+      <CustomPagination size={dotsCount} activeIndex={activeIndex} />
     </div>
   );
 }
@@ -81,7 +72,6 @@ export default function Reviews() {
 function ReviewCard({ name, role, image, feedback, stars }) {
   return (
     <motion.div
-      
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}

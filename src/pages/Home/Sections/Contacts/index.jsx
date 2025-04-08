@@ -1,8 +1,9 @@
 import { motion } from "motion/react";
-import TitleSections from "../../../../components/TitleSections";
+
 import ContactForm from "./components/ContactForm";
 import SocialLinks from "./components/SocialLinks";
 import { motionConfig } from "../../../../utils/functions";
+import TitleSections from "../../../../components/Global/TitleSections";
 
 export default function Contacts() {
   return (
