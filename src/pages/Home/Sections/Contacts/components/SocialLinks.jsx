@@ -6,7 +6,7 @@ import { motionConfig } from "../../../../../utils/functions";
 
 const socialLinks = [
   {
-    href: "https://wa.link/xlj5un",
+    href: "https://wa.link/vu7mlc",
     img: Whatsapp,
     alt: "WhatsApp",
     label: "WhatsApp",

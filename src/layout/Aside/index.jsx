@@ -45,7 +45,7 @@ export default function Aside() {
       <div className="h-full w-2/4 text-center mb-2 flex flex-col gap-14">
         <AnchorLinks menuItems={menuItems} />
         <a
-          href="https://wa.link/xlj5un"
+          href="https://wa.link/vu7mlc"
           aria-label="Enviar mensagem para José Danilo pelo WhatsApp"
           target="_blank"
           rel="noopener noreferrer"
