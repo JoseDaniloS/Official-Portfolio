@@ -1,12 +1,14 @@
-
 import Github_Icon from "/Github_Icon.svg";
 import Linkedin_Icon from "/Linkedin_Icon.svg";
 import Instagram_Icon from "/Instagram_Icon.svg";
 
 import Danilo from "/Danilo.webp";
 import { AnchorLinks } from "../../components/Global/AnchorLinks";
+import { useEffect, useState } from "react";
 
 export default function Aside() {
+  const [activeSection, setActiveSection] = useState("home");
+  
   const menuItems = [
     { name: "Início", href: "home" },
     { name: "Sobre mim", href: "about" },
@@ -15,6 +17,29 @@ export default function Aside() {
     { name: "Feedbacks", href: "reviews" },
     { name: "Contato", href: "contact" }
   ];
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.some(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+            console.log(activeSection)
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    menuItems.forEach((item) => {
+      const element = document.getElementById(item.href);
+      if(element) {
+        observer.observe(element)
+      }
+    })
+
+    return () => observer.disconnect()
+  }, []);
+
 
   const iconeLinks = [
     {
@@ -43,7 +68,7 @@ export default function Aside() {
 
       {/* Menu de Navegação */}
       <div className="h-full w-2/4 text-center mb-2 flex flex-col gap-14">
-        <AnchorLinks menuItems={menuItems} />
+        <AnchorLinks activeSection={activeSection} menuItems={menuItems} />
         <a
           href="https://wa.link/vu7mlc"
           aria-label="Enviar mensagem para José Danilo pelo WhatsApp"

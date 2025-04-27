@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react";
+
 import AboutMe from "./Sections/About_Me";
 import Aside from "../../layout/Aside";
 import Center from "./Sections/Center";
@@ -8,25 +10,41 @@ import Reviews from "./Sections/Reviews";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import ReturnToTop from "../../components/Global/ReturnToTop";
-
+import TitleAnimateForEntry from "../../components/Global/TitleAnimateForEntry";
 
 export default function Home() {
+  const [showContent, setShowContent] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <main className="w-full h-full justify-end flex">
-      <ReturnToTop />
-      <Header />
-      <Aside />
-      <div className="w-4/5 max-lg:w-full h-full flex flex-col overflow-x-hidden">
-        <Center />
-        <AboutMe />
-        <Experience />
-        <Projects />
-        <Reviews />
-        <Contacts />
-        <Footer />
-      </div>
-    </main>
+    <>
+      {/* Animação de abertura do título */}
+      <TitleAnimateForEntry showContent={showContent} />
+
+      {/* Conteúdo principal */}
+      {showContent && (
+        <main className="w-full h-full justify-end flex">
+          <ReturnToTop />
+          <Header />
+          <Aside />
+          <div className="w-4/5 max-lg:w-full h-full flex flex-col overflow-x-hidden">
+            <Center />
+            <AboutMe />
+            <Experience />
+            <Projects />
+            <Reviews />
+            <Contacts />
+            <Footer />
+          </div>
+        </main>
+      )}
+    </>
   );
 }
