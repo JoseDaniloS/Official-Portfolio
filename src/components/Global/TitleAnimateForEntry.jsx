@@ -1,9 +1,9 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 
-export default function TitleAnimateForEntry({showContent}) {
+export default function TitleAnimateForEntry({ showContent }) {
   return (
     <AnimatePresence>
-      {!showContent &&
+      {!showContent && (
         <motion.div
           className="w-full h-dvh absolute z-50 flex justify-center bg-[#0E0E0E] items-center"
           initial={{ opacity: 1 }}
@@ -14,12 +14,14 @@ export default function TitleAnimateForEntry({showContent}) {
           <motion.h1
             initial={{ opacity: 0, scale: 0.7, y: 20, rotate: -5 }}
             animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
+            exit={{ opacity: 0, scale: 0.7, y: 20, rotate: -5 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="text-5xl font-bold text-white tracking-widest"
           >
             {"<J/D>"}
           </motion.h1>
-        </motion.div>}
+        </motion.div>
+      )}
     </AnimatePresence>
   );
 }

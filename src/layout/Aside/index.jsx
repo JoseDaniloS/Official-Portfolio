@@ -23,7 +23,6 @@ export default function Aside() {
         entries.some(entry => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
-            console.log(activeSection)
           }
         });
       },

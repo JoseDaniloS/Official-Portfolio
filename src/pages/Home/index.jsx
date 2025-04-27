@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import AboutMe from "./Sections/About_Me";
 import Aside from "../../layout/Aside";
@@ -11,17 +11,10 @@ import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import ReturnToTop from "../../components/Global/ReturnToTop";
 import TitleAnimateForEntry from "../../components/Global/TitleAnimateForEntry";
+import { useVisibilityState } from "../../hooks/useVisibilityState";
 
 export default function Home() {
-  const [showContent, setShowContent] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
+const { showContent } = useVisibilityState();
 
   return (
     <>
