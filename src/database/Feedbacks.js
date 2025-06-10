@@ -10,7 +10,7 @@ export const reviews = [
     image: GerlianoSouza,
     stars: 5,
     feedback:
-      "Danilo é um desenvolvedor completo. Consegue desenvolver projetos de pequena a grande escala sempre dentro dos prazos. Um verdadeiro líder de equipe, inspirando seus parceiros de código a irem sempre além. Proatividade reflete sua imagem. Sem sombra de dúvidas Danilo está no rol dos desenvolvedores de minha confiança!"
+      "Danilo é um desenvolvedor completo. Consegue desenvolver projetos de pequena a grande escala sempre dentro dos prazos. Um verdadeiro líder de equipe, inspirando seus parceiros de código a irem sempre além. Proatividade reflete sua imagem. Sem sombra de dúvidas Danilo está no rol dos desenvolvedores de minha confiança!"
   },
   {
     name: "Leticia Vieira",

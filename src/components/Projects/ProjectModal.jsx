@@ -41,9 +41,9 @@ export function ProjectModal({ projectsData, onClose }) {
         </h2>
 
         <div className="space-y-2 max-md:text-sm mb-4">
-          {projectsData.description.map((text, idx) =>
-            <p key={idx}>
-              {text}
+          {projectsData.description.map((text, index) =>
+            <p key={index} dangerouslySetInnerHTML={{ __html: text }}>
+            
             </p>
           )}
         </div>
@@ -104,10 +104,21 @@ export function ProjectModal({ projectsData, onClose }) {
             className="font-semibold"
           >
             Link do Projeto:{" "}
-            <span className=" transition-all duration-300 hover:text-red-600">
+            <span className=" transition-all duration-300 text-red-500">
               {projectsData.url}
             </span>
           </a>
+          {projectsData.playStoreUrl && <a
+            href={projectsData.playStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold"
+          >
+            Link da PlayStore:{" "}
+            <span className=" transition-all duration-300 text-red-500">
+              {projectsData.playStoreUrl}
+            </span>
+          </a>}
         </div>
 
         <button
