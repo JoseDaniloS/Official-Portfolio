@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -25,6 +26,10 @@ export default function Projects() {
       <Swiper
         spaceBetween={30}
         slidesPerView={1}
+        modules={[Autoplay]}
+        loop={true}
+        autoplay={{ delay: 5000 }}
+        
         onSwiper={swiper => (swiperRef.current = swiper)}
         onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
         className="md:w-[80%] max-md:w-[90vw]"

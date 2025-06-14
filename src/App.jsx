@@ -1,9 +1,16 @@
+import ClickSpark from "./components/Global/ClickSpark";
 import Home from "./pages/Home";
 
 export default function App() {
   return (
-    <div>
+    <ClickSpark
+      sparkColor="#fff"
+      sparkSize={10}
+      sparkRadius={15}
+      sparkCount={8}
+      duration={400}
+    >
       <Home />
-    </div>
+    </ClickSpark>
   );
 }

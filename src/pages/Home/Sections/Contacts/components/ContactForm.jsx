@@ -1,15 +1,40 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
 import { motion } from "motion/react";
 import { motionConfig } from "../../../../../utils/functions";
+import Input from "../../../../../components/Global/Input";
+import TextArea from "../../../../../components/Global/TextArea";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "react-toastify";
+
+const formSchema = z.object({
+  user_name: z
+    .string()
+    .min(1, "Nome completo é obrigatório")
+    .max(100, "Nome completo deve ter no máximo 100 caracteres"),
+  user_email: z.string().min(1, "E-mail é obrigatório").email("E-mail inválido"),
+  message: z
+    .string()
+    .min(1, "Mensagem é obrigatória")
+    .max(500, "Mensagem deve ter no máximo 500 caracteres"),
+});
 
 export default function ContactForm() {
   const form = useRef();
+  const {
+    register,
+    handleSubmit: hookFormHandleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: zodResolver(formSchema),
+  });
+
   const [loading, setLoading] = useState(false);
 
-  const sendEmail = async e => {
-    e.preventDefault();
+  const onSubmit = async (data) => {
     setLoading(true);
 
     try {
@@ -19,10 +44,10 @@ export default function ContactForm() {
         form.current,
         "CRPHNdzbj58kZQLig"
       );
-      toast.success("Email enviado com sucesso!");
-      form.current.reset();
+      reset();
+      toast.success("Mensagem enviada com sucesso!");
     } catch (error) {
-      toast.error("Erro ao enviar email. Tente novamente mais tarde!");
+      toast.error("Falha ao enviar a mensagem. Tente novamente.");
     } finally {
       setLoading(false);
     }
@@ -32,35 +57,34 @@ export default function ContactForm() {
     <motion.form
       {...motionConfig}
       ref={form}
-      onSubmit={sendEmail}
+      onSubmit={hookFormHandleSubmit(onSubmit)}
       className="flex flex-col gap-4 md:w-[80%] max-md:w-[90vw] mt-6"
     >
-      <input
+      <Input
+        {...register("user_name")}
         name="user_name"
-        type="text"
-        placeholder="Seu nome"
-        required
-        className="w-full p-3 rounded bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-500"
+        label="Seu nome"
+        error={errors.user_name?.message}
       />
-      <input
+      <Input
+        {...register("user_email")}
         name="user_email"
         type="email"
-        placeholder="Seu e-mail"
-        required
-        className="w-full p-3 rounded bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-500"
+        label="Seu E-mail"
+        error={errors.user_email?.message}
       />
-      <textarea
+      <TextArea
+        {...register("message")}
         name="message"
-        placeholder="Sua mensagem"
-        required
-        className="w-full p-3 rounded bg-[#333] text-white h-32 resize-none focus:outline-none focus:ring-2 focus:ring-red-500"
+        label="Sua mensagem"
+        error={errors.message?.message}
       />
       <button
         type="submit"
         disabled={loading}
-        className={`w-full flex justify-center items-center gap-2 bg-red-500 py-3 rounded text-white font-semibold transition ${loading
-          ? "opacity-50 cursor-not-allowed"
-          : "hover:bg-red-600"}`}
+        className={`w-full flex justify-center items-center gap-2 bg-red-500 py-3 rounded text-white font-semibold transition ${
+          loading ? "opacity-50 cursor-not-allowed" : "hover:bg-red-600"
+        }`}
       >
         {loading ? "Enviando..." : "Enviar Mensagem"}
       </button>

@@ -27,7 +27,7 @@ const { showContent } = useVisibilityState();
           <ReturnToTop />
           <Header />
           <Aside />
-          <div className="w-4/5 max-lg:w-full h-full flex flex-col overflow-x-hidden">
+          <div className="w-4/5 max-lg:w-full h-full flex flex-col bg-[#0E0E0E] overflow-x-hidden">
             <Center />
             <AboutMe />
             <Experience />

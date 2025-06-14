@@ -6,7 +6,7 @@ export default function Center() {
   return (
     <section
       id="home"
-      className="w-full relative h-dvh flex bg-cover bg-center max-md:mt-[88px] flex-col gap-10 text-white justify-center items-center"
+      className="w-full relative h-dvh flex bg-cover bg-center max-lg:mt-[88px] flex-col gap-10 text-white justify-center items-center"
       style={{
         backgroundImage: `url(${BackGround_Lobby})`,
       }}
@@ -22,7 +22,7 @@ export default function Center() {
       >
         <h1 className="text-3xl max-md:text-2xl text-white">Bem-vindo</h1>
         <h2 className="text-5xl max-md:text-4xl">
-          Desenvolvedor Front-End & CEO da Chronos - Web Soluções
+          <span className="text-red-600">Dev. Front-End</span> && CEO da Chronos - Web Soluções
         </h2>
       </motion.div>
 
