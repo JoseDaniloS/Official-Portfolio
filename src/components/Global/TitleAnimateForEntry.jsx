@@ -18,7 +18,7 @@ export default function TitleAnimateForEntry({ showContent }) {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="text-5xl font-bold text-white tracking-widest"
           >
-            {"<J/D>"}
+            <i>{"<Jdkskj />"}</i>
           </motion.h1>
         </motion.div>
       )}

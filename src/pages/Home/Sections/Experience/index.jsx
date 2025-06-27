@@ -46,11 +46,11 @@ function ExperienceCard({ logo, cargo, project, start, end }) {
       className="relative w-[500px] max-w-full min-w-[300px] bg-gradient-to-b from-[#161616] to-[#121212] pt-16 px-6 pb-8 rounded-3xl text-white border border-[#262626] mt-4 shadow-lg flex flex-col items-center gap-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-red-500/30"
     >
       {/* Ícone flutuante com glow */}
-      <div className="absolute -top-10 p-2 rounded-2xl bg-[#1a1a1a] flex items-center justify-center">
+      <div className="absolute -top-10 p-2 rounded-t-2xl bg-[#1a1a1a] flex items-center justify-center">
         <img
           src={logo}
           alt={project ? `Logo do projeto ${project}` : "Logo do projeto"}
-          className="h-12 object-contain"
+          className="h-14 object-contain"
         />
       </div>
 

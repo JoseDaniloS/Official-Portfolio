@@ -39,7 +39,7 @@ export default function Header() {
     >
       <div className="flex items-center relative z-10 justify-between w-full">
         <h1 className="text-3xl font-bold text-white">
-          {"<J/D>"}
+          {"<Jdkskj />"}
         </h1>
         <Hamburger color="white" toggled={menuOpen} toggle={setMenuOpen} />
       </div>

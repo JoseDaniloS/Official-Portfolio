@@ -12,37 +12,37 @@ export default function AboutMe() {
       <TitleSections text="Sobre mim" />
       <motion.div
         {...motionConfig}
-        className="h-full max-md:w-[90vw] md:w-[80%] max-md:flex-col text-[#999] flex  gap-6 md:gap-12"
+        className="h-full max-md:w-[90vw] md:w-[80%] max-md:flex-col text-[#ccc] flex  gap-6 md:gap-12"
       >
         <div className="w-full md:w-5/6 flex flex-col gap-6 items-center text-left">
           <div className="flex flex-col gap-5 md:text-left">
             <h2 className="text-3xl max-md:text-2xl text-white font-bold">
-              Eu sou <span className="text-white text-shadow-neon-red text-shadow-lg">José Danilo</span>, um
-              <strong> desenvolvedor front-end</strong>, CEO da
-              <span className="text-white text-shadow-neon-red text-shadow-lg"> Chronos - Web Soluções</span> e
+              Eu sou <i className="text-white text-shadow-neon-red text-shadow-lg">José Danilo</i>, um
+              <span className="font-bold text-white"> desenvolvedor front-end</span>, CEO da
+              <i className="text-white text-shadow-neon-red text-shadow-lg"> Chronos - Web Soluções</i> e
               pesquisador no projeto Carcará.
             </h2>
             <p>
-              Sou apaixonado por <strong>desenvolvimento web</strong> e{" "}
-              <strong>computação em nuvem</strong>, sempre buscando criar
+              Sou apaixonado por <span className="font-bold text-white">desenvolvimento web</span> e{" "}
+              <span className="font-bold text-white">computação em nuvem</span>, sempre buscando criar
               soluções inovadoras e eficientes. Atualmente, atuo como{" "}
-              <strong>desenvolvedor front-end</strong> e líder da{" "}
-              <strong>Chronos - Web Soluções</strong>, onde ajudo empresas e
+              <span className="font-bold text-white">desenvolvedor front-end</span> e líder da{" "}
+              <span className="font-bold text-white">Chronos - Web Soluções</span>, onde ajudo empresas e
               profissionais a transformar ideias em produtos digitais de alto
               impacto.
             </p>
             <p>
               Além disso, faço parte do{" "}
-              <strong>projeto de pesquisa Carcará na UFERSA</strong>, onde
+              <span className="font-bold text-white">projeto de pesquisa Carcará na UFERSA</span>, onde
               contribuo para o desenvolvimento de sistemas que aprimoram a
               infraestrutura de TI e a experiência acadêmica.
             </p>
             <p>
               Meu foco está em desenvolver{" "}
-              <strong>
+              <span className="font-bold text-white">
                 interfaces modernas, responsivas e de alta performance
-              </strong>, utilizando tecnologias como{" "}
-              <strong>React, Tailwind CSS e TypeScript</strong>. Acredito no
+              </span>, utilizando tecnologias como{" "}
+              <span className="font-bold text-white">React, Tailwind CSS e TypeScript</span>. Acredito no
               aprendizado contínuo e na colaboração para criar produtos digitais
               que realmente fazem a diferença.
             </p>
@@ -68,7 +68,7 @@ export default function AboutMe() {
         <div className="md:w-[80%] max-md:w-[90vw] max-md:flex-col flex  justify-center md:justify-between text-[42px] gap-6">
           <StatCard value="1+" label="Ano de Experiência" />
           <StatCard value="5+" label="Clientes Satisfeitos" />
-          <StatCard value="6+" label="Projetos Realizados" />
+          <StatCard value="7+" label="Projetos Realizados" />
         </div>
       </motion.div>
     </div>
@@ -79,10 +79,10 @@ export default function AboutMe() {
 function StatCard({ value, label }) {
   return (
     <div className="flex flex-col items-center text-center p-6">
-      <span className="font-bold">
+      <i className="font-bold text-shadow-neon-red text-shadow-lg">
         {value}
-      </span>
-      <p className="text-[18px] text-[#999]">
+      </i>
+      <p className="text-[18px] text-[#aaa]">
         {label}
       </p>
     </div>
@@ -112,7 +112,7 @@ function PersonalInfo() {
     <div className="flex flex-col gap-5 text-xl w-full md:w-auto">
       {personalData.map((item, index) =>
         <p key={index} className="border-b border-[#303030] py-2">
-          <span className="font-bold text-white">{item.label}:</span>{" "}
+          <i className="font-bold text-white">{item.label}:</i>{" "}
           {item.value}
         </p>
       )}
