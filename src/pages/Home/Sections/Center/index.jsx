@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { motionConfig, scrollToSection } from "../../../../utils/functions";
+import Danilo from "/Danilo.webp";
 
 export default function Center() {
   return (
@@ -12,6 +13,7 @@ export default function Center() {
         {...motionConfig}
         className="flex relative text-[#ccc] max-md:w-[90vw] font-bold flex-col max-w-[800px] justify-center items-center gap-2 text-center"
       >
+        <img src={Danilo} alt="Foto de José Danilo" className="lg:hidden" />
         <h1 className="text-3xl max-md:text-2x"> Seja bem-vindo ao</h1>
         <h2 className="text-5xl max-md:text-4xl">
           Portfolio de

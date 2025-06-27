@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className={`w-full hidden max-lg:block p-5 fixed top-0 left-0 bg-[#0E0E0E] transition-all duration-500
+      className={`w-full hidden max-lg:block p-5 fixed top-0 left-0 bg-[#0E0E0E70] transition-all duration-500
           ${isHeaderVisible
             ? "translate-y-0"
             : "-translate-y-full"} shadow-md z-30`}
@@ -55,7 +55,7 @@ export default function Header() {
 function Menu({ menuOpen, menuItems, setMenuOpen }) {
   return (
     <div
-      className={`absolute top-0 z-0 left-0 w-full py-5 bg-[#0E0E0E] flex flex-col items-center justify-center transform transition-transform duration-500 ${menuOpen
+      className={`absolute top-0 z-0 left-0 w-full py-5 bg-[#0E0E0E70] flex flex-col items-center justify-center transform transition-transform duration-500 ${menuOpen
         ? "translate-y-20"
         : "-translate-y-full"}`}
     >
