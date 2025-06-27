@@ -27,7 +27,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="w-full min-h-screen flex flex-col py-16 gap-16 items-center justify-around bg-[#303030]"
+      className="w-full min-h-screen flex flex-col py-16 gap-16 items-center justify-around"
     >
       <TitleSections text="Experiência" />
       <div className="md:w-[80%] max-md:w-[90vw] flex flex-wrap justify-center gap-8 text-white">
@@ -43,26 +43,41 @@ function ExperienceCard({ logo, cargo, project, start, end }) {
   return (
     <motion.div
       {...motionConfig}
-      className="w-[500px] max-w-full min-w-[300px] bg-[#181818] p-6 flex flex-col items-center gap-4 rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#202020]"
+      className="relative w-[500px] max-w-full min-w-[300px] bg-gradient-to-b from-[#161616] to-[#121212] pt-16 px-6 pb-8 rounded-3xl text-white border border-[#262626] mt-4 shadow-lg flex flex-col items-center gap-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-red-500/30"
     >
-      <img
-        src={logo}
-        alt={logo ? `Logo do projeto ${project}` : "Imagem não disponível"}
-        className="h-16 object-contain"
-      />
-      <h2 className="text-xl font-semibold text-center text-red-500">
+      {/* Ícone flutuante com glow */}
+      <div className="absolute -top-10 p-2 rounded-2xl bg-[#1a1a1a] flex items-center justify-center">
+        <img
+          src={logo}
+          alt={project ? `Logo do projeto ${project}` : "Logo do projeto"}
+          className="h-12 object-contain"
+        />
+      </div>
+
+      {/* Cargo */}
+      <h2 className="text-xl font-semibold text-white text-shadow-neon-red text-shadow-lg tracking-wide text-center">
         {cargo}
       </h2>
-      <p className="font-medium text-md">
+
+      {/* Projeto */}
+      <p className="text-base font-medium text-gray-300 text-center leading-relaxed">
         {project}
       </p>
-      <p className="text-sm font-light">
-        <time dateTime={start}>{start}</time> -{" "}
-        <time dateTime={end}>{end}</time>
+
+      {/* Linha decorativa */}
+      <div className="w-12 h-[2px] bg-red-500 rounded-full opacity-50" />
+
+      {/* Período */}
+      <p className="text-sm font-light text-gray-400">
+        <time dateTime={start}>{start}</time> — <time dateTime={end}>{end}</time>
       </p>
+
+      {/* Glow animado suave no hover */}
+      <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-red-500/60 transition duration-500 pointer-events-none" />
     </motion.div>
   );
 }
+
 
 function HardSkills() {
   return (
@@ -83,7 +98,7 @@ function HardSkillCard({ Habilidade, Icon }) {
   return (
     <motion.div
       {...motionConfig}
-      className="flex flex-col items-center bg-[#181818] text-white p-6 rounded-xl shadow-md border border-[#303030] transition-all duration-300 hover:scale-105 hover:border-red-500 hover:shadow-lg"
+      className="flex flex-col items-center bg-[#181818] text-white p-6 rounded-xl shadow-md border border-[#303030] transition-all duration-300 hover:scale-105 hover:border-neon-red hover:shadow-neon-red-hover hover:shadow-lg"
     >
       <img
         src={Icon}
@@ -119,7 +134,7 @@ function SoftSkills() {
           <motion.div
             {...motionConfig}
             key={index}
-            className="px-5 py-2 bg-[#0E0E0E] text-red-500 font-semibold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:bg-red-500 hover:text-white"
+            className="px-5 py-2 shadow-xl text-white neon-red-button font-semibold rounded-lg transition-all duration-300 hover:scale-105"
           >
             {skill}
           </motion.div>

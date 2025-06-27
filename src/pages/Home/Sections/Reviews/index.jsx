@@ -34,7 +34,7 @@ export default function Reviews() {
   return (
     <div
       id="reviews"
-      className="w-full h-full flex flex-col items-center justify-around gap-20 bg-[#303030] py-20"
+      className="w-full h-full flex flex-col items-center justify-around gap-20 py-20"
     >
       <TitleSections text="Feedbacks" />
       <motion.p
@@ -50,7 +50,7 @@ export default function Reviews() {
         spaceBetween={40}
         onSwiper={swiper => (swiperRef.current = swiper)}
         onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
-        className="md:w-[80%] overflow-auto max-md:w-[90vw]"
+        className="md:w-[80%] max-md:w-[90vw]"
         breakpoints={{
           320: { slidesPerView: 1 },
           768: { slidesPerView: 1.3 },

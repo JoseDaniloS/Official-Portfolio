@@ -28,7 +28,7 @@ export function ProjectContent({ projectsData, onMoreDetails}) {
         </div>
         <button
           onClick={onMoreDetails}
-          className="self-start bg-white cursor-pointer text-black font-medium px-4 max-md:p-2 max-md:text-[12px] py-2 rounded hover:bg-red-500 hover:text-white hover:scale-105 transition duration-500"
+          className="self-start neon-red-button cursor-pointer  font-medium px-4 max-md:p-2 max-md:text-[12px] py-2 rounded  hover:scale-105 transition duration-500"
         >
           Mostrar mais detalhes
         </button>

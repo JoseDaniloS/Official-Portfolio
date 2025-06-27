@@ -1,7 +1,49 @@
 @import "tailwindcss";
 
 
+@theme{
+    --color-neon-red: #FF1744;
+    --color-neon-red-hover: #FF3D3D;
+}
+
+.neon-red-button {
+  background-color: var(--color-neon-red);
+  color: white;
+  box-shadow:
+    0 0 5px #FF1744,
+    0 0 10px #FF1744,
+    0 0 20px #FF1744;
+  transition: all 0.3s ease;
+}
+.neon-red-button:hover {
+  background-color: var(--color-neon-red-hover);
+  box-shadow:
+    0 0 10px #FF3D3D,
+    0 0 20px #FF3D3D,
+    0 0 40px #FF3D3D;
+    
+}
+
+.neon-red-card {
+  background-color: var(--color-neon-red);
+  color:var(--color-neon-red);
+  box-shadow:
+    0 0 2px #FF1744,
+    0 0 5px #FF1744,
+    0 0 20px #FF1744;
+  transition: all 0.3s ease;
+}
+
+.neon-red-card:hover {
+  background-color: var(--color-neon-red-hover);
+  box-shadow:
+    0 0 4px #FF1744,
+    0 0 10px #FF1744,
+    0 0 40px #FF1744;
+
+}
+
 html{
-    scrollbar-color: #5c1919 #121b26;
+    scrollbar-color: #FF1744 #121b26;
     font-family: Arial, Helvetica, sans-serif;
 }

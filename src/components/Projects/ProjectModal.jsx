@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { useEffect } from "react";
+import { FaTimes } from "react-icons/fa";
 
 export function ProjectModal({ projectsData, onClose }) {
   //Função para fechar o modal quando apertar "ESC"
@@ -11,8 +12,10 @@ export function ProjectModal({ projectsData, onClose }) {
         }
       };
 
+      document.body.style.overflow = "hidden"
+
       window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
+      return () => {window.removeEventListener("keydown", handleKeyDown), document.body.style.overflow = ""}
     },
     [onClose]
   );
@@ -28,7 +31,7 @@ export function ProjectModal({ projectsData, onClose }) {
         transition={{ duration: 0.5 }}
         onClick={e => e.stopPropagation()}
         viewport={{ once: true }}
-        className="bg-[#252525] z-40 max-md:w-[90vw] max-w-[1170px] p-6 rounded shadow-lg overflow-y-auto max-h-[90vh]"
+        className="bg-[#252525] z-40 max-md:w-[90vw] relative max-w-[1170px] p-6 rounded shadow-lg overflow-y-auto max-h-[90vh]"
       >
         <img
           src={projectsData.image}
@@ -123,9 +126,10 @@ export function ProjectModal({ projectsData, onClose }) {
 
         <button
           onClick={onClose}
-          className="mt-6 bg-red-600 cursor-pointer hover:bg-red-700 font-semibold text-white px-4 py-2 rounded transition"
+          className="mt-6 absolute top-4 right-4 cursor-pointer neon-red-button font-semibold px-4 py-2 rounded transition"
+          aria-label="Fechar modal"
         >
-          Fechar
+          <FaTimes />
         </button>
       </motion.div>
     </div>

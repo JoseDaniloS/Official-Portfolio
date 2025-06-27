@@ -58,7 +58,7 @@ export default function Aside() {
     }
   ];
   return (
-    <div className="w-1/5 max-lg:hidden h-full overflow-auto fixed left-0 text-[#FFFFFFDE] bg-[#0E0E0E] flex flex-col justify-around items-center">
+    <div className="w-1/5 max-lg:hidden h-full overflow-auto fixed left-0 text-[#FFFFFFDE] bg-[#00000070]  flex flex-col justify-around items-center">
       {/* Foto de Perfil */}
       <div className="w-full h-1/2 flex flex-col justify-center items-center p-10 gap-[10px]">
         <img src={Danilo} alt="Foto de Perfil José Danilo" />
@@ -73,7 +73,7 @@ export default function Aside() {
           aria-label="Enviar mensagem para José Danilo pelo WhatsApp"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-red-800 hover:bg-red-700 font-bold py-2 w-full rounded-[20px] cursor-pointer transition-all"
+          className="neon-red-button font-bold py-2 w-full rounded-[20px] cursor-pointer transition-all"
         >
           Enviar Mensagem
         </a>

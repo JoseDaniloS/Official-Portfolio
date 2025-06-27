@@ -7,7 +7,7 @@ export default function AboutMe() {
   return (
     <div
       id="about"
-      className="w-full min-h-screen max-xl:h-full flex flex-col items-center justify-around py-[40px] gap-20 bg-[#121212]"
+      className="w-full min-h-screen max-xl:h-full flex flex-col items-center max-lg:mt-[88px] justify-around py-[40px] gap-20"
     >
       <TitleSections text="Sobre mim" />
       <motion.div
@@ -17,9 +17,9 @@ export default function AboutMe() {
         <div className="w-full md:w-5/6 flex flex-col gap-6 items-center text-left">
           <div className="flex flex-col gap-5 md:text-left">
             <h2 className="text-3xl max-md:text-2xl text-white font-bold">
-              Eu sou <span className="text-red-500">José Danilo</span>, um
+              Eu sou <span className="text-white text-shadow-neon-red text-shadow-lg">José Danilo</span>, um
               <strong> desenvolvedor front-end</strong>, CEO da
-              <span className="text-red-500"> Chronos - Web Soluções</span> e
+              <span className="text-white text-shadow-neon-red text-shadow-lg"> Chronos - Web Soluções</span> e
               pesquisador no projeto Carcará.
             </h2>
             <p>
@@ -96,7 +96,7 @@ function PersonalInfo() {
       label: "Email",
       value: (
         <a
-          className="text-red-500"
+          className="text-white text-shadow-neon-red text-shadow-lg"
           href="mailto:danilojose.1d@gmail.com"
           aria-label="Enviar email para José Danilo"
         >

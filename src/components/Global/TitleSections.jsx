@@ -11,7 +11,7 @@ export default function TitleSections({ text }) {
           <h1 className="text-3xl md:text-4xl text-center font-bold text-white">
             {text}
           </h1>
-          <hr className="border border-red-900 w-20 mx-auto mt-2" />
+          <hr className="border neon-red-card w-20 mx-auto mt-2" />
         </div>
       </div>
     );

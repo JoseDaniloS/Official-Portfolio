@@ -7,7 +7,6 @@ import TextArea from "../../../../../components/Global/TextArea";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "react-toastify";
 
 const formSchema = z.object({
   user_name: z
@@ -45,9 +44,9 @@ export default function ContactForm() {
         "CRPHNdzbj58kZQLig"
       );
       reset();
-      toast.success("Mensagem enviada com sucesso!");
+    
     } catch (error) {
-      toast.error("Falha ao enviar a mensagem. Tente novamente.");
+      
     } finally {
       setLoading(false);
     }
@@ -82,8 +81,8 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className={`w-full flex justify-center items-center gap-2 bg-red-500 py-3 rounded text-white font-semibold transition ${
-          loading ? "opacity-50 cursor-not-allowed" : "hover:bg-red-600"
+        className={`w-full flex justify-center items-center gap-2 cursor-pointer neon-red-button py-3 rounded text-white font-semibold transition ${
+          loading ? "opacity-50 cursor-not-allowed" : "hover:bg-neon-red-hover"
         }`}
       >
         {loading ? "Enviando..." : "Enviar Mensagem"}

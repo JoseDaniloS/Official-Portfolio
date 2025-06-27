@@ -19,7 +19,7 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="w-full min-h-screen  flex flex-col items-center justify-around bg-[#121212] py-10"
+      className="w-full min-h-screen  flex flex-col items-center justify-around py-10"
     >
       <TitleSections text="Projetos" />
 
