@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 export function CustomPagination({ size, activeIndex }) {
   const VISIBLE_DOTS = 4;
-  const DOT_SIZE = 8;
-  const GAP = 4;
+  const DOT_SIZE = 32;
+  const GAP = 8;
   const DOT_SPACING = DOT_SIZE + GAP;
 
   const [previousIndex, setPreviousIndex] = useState(activeIndex);
@@ -29,7 +29,7 @@ export function CustomPagination({ size, activeIndex }) {
 
       return () => clearTimeout(animationTimeout);
     }
-  }, [activeIndex, previousIndex]);
+  }, [activeIndex]);
 
   const fromPosition = (previousIndex - visibleStartIndex) * DOT_SPACING;
   const toPosition = (activeIndex - visibleStartIndex) * DOT_SPACING;
@@ -44,7 +44,7 @@ export function CustomPagination({ size, activeIndex }) {
     >
       {/* Linha animada entre os dots */}
       <div
-        className="absolute top-0 bottom-0 my-auto h-[8px] bg-red-600 rounded-full transition-all duration-300 ease-in-out"
+        className="absolute top-0 bottom-0 my-auto bg-neon-red-hover transition-all duration-300 ease-in-out"
         style={{
           left: `${animatedLeft}px`,
           width: isAnimating ? `${animatedWidth}px` : `${DOT_SIZE}px`,
@@ -61,9 +61,8 @@ export function CustomPagination({ size, activeIndex }) {
             key={index}
             style={{
               minWidth: `${DOT_SIZE}px`,
-              minHeight: `${DOT_SIZE}px`,
-              borderRadius: "50%",
-              backgroundColor: "#FFFFFF1A",
+              minHeight: `${4}px`,
+              backgroundColor: "#FFFFFF3A",
               marginRight: index !== size - 1 ? `${GAP}px` : 0,
             }}
           />
