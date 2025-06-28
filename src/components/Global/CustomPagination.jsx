@@ -44,7 +44,7 @@ export function CustomPagination({ size, activeIndex }) {
     >
       {/* Linha animada entre os dots */}
       <div
-        className="absolute top-0 bottom-0 my-auto bg-neon-red-hover transition-all duration-300 ease-in-out"
+        className="absolute top-0 bottom-0 my-auto bg-neon-red transition-all duration-300 ease-in-out"
         style={{
           left: `${animatedLeft}px`,
           width: isAnimating ? `${animatedWidth}px` : `${DOT_SIZE}px`,

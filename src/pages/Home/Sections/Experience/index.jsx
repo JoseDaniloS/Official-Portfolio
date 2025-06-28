@@ -2,9 +2,12 @@ import TitleSections from "../../../../components/Global/TitleSections";
 
 import Carcara from "/HabilidadesIcons/Carcara.webp";
 import Chronos from "/HabilidadesIcons/Chronos.svg";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { motionConfig } from "../../../../utils/functions";
 import { habilidades } from "../../../../database/Habilidades";
+import TextRedShadow from "../../../../components/Global/TextRedShadow";
+import { useState } from "react";
+import { SkillModal } from "../../../../components/Experience/SkillModal";
 
 export default function Experience() {
   const experiences = [
@@ -43,33 +46,35 @@ function ExperienceCard({ logo, cargo, project, start, end }) {
   return (
     <motion.div
       {...motionConfig}
-      className="relative w-[500px] max-w-full min-w-[300px] bg-gradient-to-b from-[#161616] to-[#121212] pt-16 px-6 pb-8 rounded-3xl text-white border border-[#262626] mt-4 shadow-lg flex flex-col items-center gap-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-red-500/30"
+      className="relative w-[500px] max-w-full min-w-[300px] bg-[] pt-16 px-6 pb-8 rounded-3xl mt-4 flex flex-col items-center gap-5 transition-all duration-300 hover:scale-[1.02]"
     >
       {/* Ícone flutuante com glow */}
-      <div className="absolute -top-10 p-2 rounded-t-2xl bg-[#1a1a1a] flex items-center justify-center">
+      <div className="absolute -top-12 py-4 px-8 rounded-t-2xl flex items-center justify-center">
         <img
           src={logo}
           alt={project ? `Logo do projeto ${project}` : "Logo do projeto"}
           className="h-14 object-contain"
+          loading="lazy"
         />
       </div>
 
       {/* Cargo */}
-      <h2 className="text-xl font-semibold text-white text-shadow-neon-red text-shadow-lg tracking-wide text-center">
+      <TextRedShadow className="text-xl font-semibold tracking-wide text-center">
         {cargo}
-      </h2>
+      </TextRedShadow>
 
       {/* Projeto */}
-      <p className="text-base font-medium text-gray-300 text-center leading-relaxed">
+      <p className="text-base font-medium text-white text-center leading-relaxed">
         {project}
       </p>
 
       {/* Linha decorativa */}
-      <div className="w-12 h-[2px] bg-red-500 rounded-full opacity-50" />
+      <div className="w-20 h-[2px] bg-red-500 rounded-full opacity-50" />
 
       {/* Período */}
       <p className="text-sm font-light text-gray-400">
-        <time dateTime={start}>{start}</time> — <time dateTime={end}>{end}</time>
+        <time dateTime={start}>{start}</time> —{" "}
+        <time dateTime={end}>{end}</time>
       </p>
 
       {/* Glow animado suave no hover */}
@@ -78,37 +83,52 @@ function ExperienceCard({ logo, cargo, project, start, end }) {
   );
 }
 
-
 function HardSkills() {
   return (
     <section className="md:w-[80%] max-md:w-[90vw] flex flex-col justify-center gap-5">
       <h2 className="text-2xl font-extrabold text-center text-white">
         Hard Skills
       </h2>
-      <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-7 justify-center items-center">
-        {habilidades.map(hab =>
-          <HardSkillCard key={hab.nome} Habilidade={hab.nome} Icon={hab.icon} />
-        )}
+      <div className="w-full grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-7 justify-center items-center">
+        {habilidades.map(hab => <HardSkillCard key={hab.nome} {...hab} />)}
       </div>
     </section>
   );
 }
 
-function HardSkillCard({ Habilidade, Icon }) {
+function HardSkillCard({ nome, icon, description }) {
+  const [showModal, setShowModal] = useState(false);
+
+  // Função para fechar o modal
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <motion.div
-      {...motionConfig}
-      className="flex flex-col items-center bg-[#181818] text-white p-6 rounded-xl shadow-md border border-[#303030] transition-all duration-300 hover:scale-105 hover:border-neon-red hover:shadow-neon-red-hover hover:shadow-lg"
-    >
-      <img
-        src={Icon}
-        alt={`Ícone de ${Habilidade}`}
-        className="w-14 h-14 object-contain"
-      />
-      <span className="mt-3 text-sm font-semibold text-gray-300">
-        {Habilidade}
-      </span>
-    </motion.div>
+    <>
+      <motion.div
+        {...motionConfig}
+        className="flex relative flex-col items-center bg-[#181818] text-white p-6 rounded-xl shadow-md border border-[#303030] transition-all duration-300 hover:scale-105 hover:border-neon-red hover:shadow-neon-red-hover hover:shadow-lg cursor-pointer"
+        onClick={() => setShowModal(true)} // Abre o modal ao clicar no card
+      >
+        <img
+          src={icon}
+          alt={`Ícone de ${nome}`}
+          className="w-16 h-16 object-contain"
+          loading="lazy"
+        />
+      </motion.div>
+
+      {/* Renderiza o modal condicionalmente */}
+      {showModal && (
+        <SkillModal
+          nome={nome}
+          icon={icon}
+          description={description}
+          onClose={handleCloseModal} // Passa a função de fechamento para o modal
+        />
+      )}
+    </>
   );
 }
 

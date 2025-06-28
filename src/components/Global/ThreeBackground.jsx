@@ -1,29 +1,21 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
-import * as THREE from "three";
 import { useRef, useMemo } from "react";
 
-// ✅ ESTE componente está DENTRO do Canvas, então pode usar hooks do R3F
 export function PointsCloud() {
   const pointsRef = useRef();
 
   const sphere = useMemo(() => {
-    const positions = [];
-    for (let i = 0; i < 1000; i++) {
-      const p = new THREE.Vector3(
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10
-      );
-      positions.push(p);
-    }
-    return new Float32Array(positions.flatMap((v) => [v.x, v.y, v.z]));
-  }, []);
+  const positions = new Float32Array(1000 * 3);
+  for (let i = 0; i < 1000 * 3; i++) {
+    positions[i] = (Math.random() - 0.5) * 10;
+  }
+  return positions;
+}, []);
 
   useFrame(() => {
     if (pointsRef.current) {
       pointsRef.current.rotation.y += 0.001;
-      pointsRef.current.rotation.x += 0.001;
     }
   });
 

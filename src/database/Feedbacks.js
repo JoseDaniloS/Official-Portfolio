@@ -1,7 +1,7 @@
-import PedroArthur from "../assets/Feedback/PedroArthur.jpg"
-import AnthonyKevy from "../assets/Feedback/AnthonyKevy.jpg"
-import LeticiaVieira from "../assets/Feedback/LeticiaVieira.png"
-import GerlianoSouza from "../assets/Feedback/Gerliano.png"
+import PedroArthur from "../assets/Feedback/PedroArthur.webp"
+import AnthonyKevy from "../assets/Feedback/AnthonyKevy.webp"
+import LeticiaVieira from "../assets/Feedback/LeticiaVieira.webp"
+import GerlianoSouza from "../assets/Feedback/Gerliano.webp"
 
 export const reviews = [
   {

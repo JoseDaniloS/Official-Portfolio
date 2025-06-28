@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import "./global.css"
 
 
@@ -7,7 +7,7 @@ export function ProjectContent({ projectsData, onMoreDetails}) {
     <motion.article
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       viewport={{ once: false }}
       className="max-md:w-[90vw] max-md:h-[450px] bg-[#242A45] rounded-[2px] overflow-hidden relative flex flex-col items-center justify-center"
     >

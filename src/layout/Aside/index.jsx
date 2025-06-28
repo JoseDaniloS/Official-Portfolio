@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function Aside() {
   const [activeSection, setActiveSection] = useState("home");
-  
+
   const menuItems = [
     { name: "Início", href: "home" },
     { name: "Sobre mim", href: "about" },
@@ -29,16 +29,15 @@ export default function Aside() {
       { threshold: 0.5 }
     );
 
-    menuItems.forEach((item) => {
+    menuItems.forEach(item => {
       const element = document.getElementById(item.href);
-      if(element) {
-        observer.observe(element)
+      if (element) {
+        observer.observe(element);
       }
-    })
+    });
 
-    return () => observer.disconnect()
+    return () => observer.disconnect();
   }, []);
-
 
   const iconeLinks = [
     {
@@ -61,7 +60,7 @@ export default function Aside() {
     <div className="w-1/5 max-lg:hidden h-full overflow-auto fixed left-0 text-[#FFFFFFDE] bg-[#00000070]  flex flex-col justify-around items-center">
       {/* Foto de Perfil */}
       <div className="w-full h-1/2 flex flex-col justify-center items-center p-10 gap-[10px]">
-        <img src={Danilo} alt="Foto de Perfil José Danilo" />
+        <img src={Danilo} alt="Foto de Perfil José Danilo" loading="lazy" />
         <h1 className="text-2xl font-extrabold">José Danilo</h1>
       </div>
 

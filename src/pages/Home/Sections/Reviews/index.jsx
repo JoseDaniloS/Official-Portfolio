@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import StarRed from "/FeedbacksIcons/StarRed.png";
 import StarWhite from "/FeedbacksIcons/StarWhite.png";
 import { reviews } from "../../../../database/Feedbacks";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { motionConfig } from "../../../../utils/functions";
 import { CustomPagination } from "../../../../components/Global/CustomPagination";
 
@@ -83,6 +83,7 @@ function ReviewCard({ name, role, image, feedback, stars }) {
           <img
             src={image}
             alt={`Foto de ${name}`}
+            loading="lazy"
             className="w-16 h-16 rounded-full object-cover"
           />
           <div>
@@ -103,12 +104,14 @@ function ReviewCard({ name, role, image, feedback, stars }) {
                     src={StarRed}
                     alt="Estrela preenchida"
                     className="w-5 h-5"
+                    loading="lazy"
                   />
                 : <img
                     key={index}
                     src={StarWhite}
                     alt="Estrela vazia"
                     className="w-5 h-5"
+                    loading="lazy"
                   />
           )}
         </div>
