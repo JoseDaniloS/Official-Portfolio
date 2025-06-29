@@ -9,6 +9,8 @@ import { reviews } from "../../../../database/Feedbacks";
 import { motion } from "framer-motion";
 import { motionConfig } from "../../../../utils/functions";
 import { CustomPagination } from "../../../../components/Global/CustomPagination";
+import { FaStar } from "react-icons/fa";
+import TextRedShadow from "../../../../components/Global/TextRedShadow";
 
 export default function Reviews() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -87,9 +89,9 @@ function ReviewCard({ name, role, image, feedback, stars }) {
             className="w-16 h-16 rounded-full object-cover"
           />
           <div>
-            <h2 className="text-lg font-bold text-white">
+            <TextRedShadow className="text-lg font-bold">
               {name}
-            </h2>
+            </TextRedShadow>
             <h3 className="text-sm text-[#999]">
               {role}
             </h3>
@@ -99,20 +101,8 @@ function ReviewCard({ name, role, image, feedback, stars }) {
           {Array.from({ length: 5 }).map(
             (_, index) =>
               index < stars
-                ? <img
-                    key={index}
-                    src={StarRed}
-                    alt="Estrela preenchida"
-                    className="w-5 h-5"
-                    loading="lazy"
-                  />
-                : <img
-                    key={index}
-                    src={StarWhite}
-                    alt="Estrela vazia"
-                    className="w-5 h-5"
-                    loading="lazy"
-                  />
+                ? <FaStar color="#FF1744"/>
+                : <FaStar color="#fefefe" />
           )}
         </div>
       </div>

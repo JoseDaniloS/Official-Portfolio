@@ -1,27 +1,45 @@
 import { AnimatePresence, motion } from "framer-motion";
+import React, { Suspense, useState, useEffect } from "react";
 
-export default function TitleAnimateForEntry({ showContent }) {
+// Componente para exibir a mensagem de "Carregando"
+function LoadingFallback() {
+  const [dots, setDots] = useState("");
+
+  // Animação dos pontos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDots(prevDots => {
+        if (prevDots.length < 10) {
+          return prevDots + ".";
+        }
+        return ""; // Reseta os pontos
+      });
+    }, 40); // Adiciona um ponto a cada 40ms
+
+    return () => clearInterval(interval); // Limpa o intervalo no unmount
+  }, []);
+
+  return (
+    <motion.div
+      className="w-full h-dvh absolute z-50 flex flex-col justify-center bg-[#0E0E0E] items-center"
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.2 }}
+    >
+      <span className="inline-block text-6xl text-white text-left">
+        {dots}
+      </span>
+    </motion.div>
+  );
+}
+
+export default function TitleAnimateForEntry({ children }) {
   return (
     <AnimatePresence>
-      {!showContent && (
-        <motion.div
-          className="w-full h-dvh absolute z-50 flex justify-center bg-[#0E0E0E] items-center"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2 }}
-        >
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.7, y: 20, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
-            exit={{ opacity: 0, scale: 0.7, y: 20, rotate: -5 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-5xl font-bold text-white tracking-widest"
-          >
-            <i>{"<Jdkskj />"}</i>
-          </motion.h1>
-        </motion.div>
-      )}
+      <Suspense fallback={<LoadingFallback />}>
+        {children}
+      </Suspense>
     </AnimatePresence>
   );
 }

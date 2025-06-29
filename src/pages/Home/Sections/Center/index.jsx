@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import { motionConfig, scrollToSection } from "../../../../utils/functions";
 import Danilo from "/Danilo.webp";
 import TextRedShadow from "../../../../components/Global/TextRedShadow";
+import { FaCode, FaMugSaucer } from "react-icons/fa6";
 
 // Array de palavras para alternar
-const changingWords = ["futuro", "mundo", "universo"];
+const changingWords = ["FUTURO", "MUNDO", "UNIVERSO"];
 
 // Configurações de animação para as palavras que trocam
 const wordVariants = {
@@ -38,11 +39,8 @@ export default function Center() {
         <img src={Danilo} alt="Foto de José Danilo" className="lg:hidden" />
         {/* Subtítulo de Apresentação */}
         <h2 className="text-2xl max-md:text-md mt-4 font-normal">
-          Sou{" "}
-          <TextRedShadow>
-            José Danilo
-          </TextRedShadow>
-          , Desenvolvedor Front - End.
+          Sou <TextRedShadow>José Danilo</TextRedShadow>
+          , Desenvolvedor Front End.
         </h2>
 
         {/* Título Principal: "Construindo o futuro" com a palavra animada em destaque */}
@@ -56,13 +54,15 @@ export default function Center() {
                 initial="initial"
                 animate="animate"
                 exit="exit"
+                transition={{ type: "spring", stiffness: 560, damping: 20 }}
                 className="inline-block text-neon-red text-shadow-[#444] text-shadow-lg" // Classes de destaque aplicadas aqui
               >
                 {changingWords[currentWordIndex]}
               </motion.span>
             </AnimatePresence>
-          </span>
-          {" "}com linhas coloridas.
+          </span>{" "}
+          com <FaCode className="inline" aria-hidden="true" /> e{" "}
+          <FaMugSaucer className="inline" aria-hidden="true" />.
         </h1>
       </motion.div>
 

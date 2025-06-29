@@ -37,7 +37,7 @@ export function SkillModal({ nome, icon, description, onClose }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={() => onClose()}
-        className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0e0e0e70] p-4"
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0e0e0e70] backdrop-blur-md p-4"
       >
         {/* Modal content */}
         <motion.div

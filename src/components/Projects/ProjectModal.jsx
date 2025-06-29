@@ -37,7 +37,7 @@ export function ProjectModal({ projectsData, onClose }) {
     <AnimatePresence>
       <div
         onClick={onClose}
-        className="fixed inset-0 flex h-dvh items-center justify-center bg-[#00000099] text-white z-30"
+        className="fixed inset-0 flex h-dvh items-center justify-center backdrop-blur-md bg-[#00000099] text-white z-30"
       >
         <motion.div
         {...modalVariants}
@@ -47,7 +47,7 @@ export function ProjectModal({ projectsData, onClose }) {
           {/* Botão de fechar */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 cursor-pointer neon-red-button rounded px-4 py-2 font-semibold transition"
+            className="absolute top-4 right-4 cursor-pointer neon-red-button rounded p-2 max-md:p-1 font-semibold transition"
             aria-label="Fechar modal"
           >
             <FaTimes />
