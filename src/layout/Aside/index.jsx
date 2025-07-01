@@ -1,6 +1,4 @@
-import Github_Icon from "/Github_Icon.svg";
-import Linkedin_Icon from "/Linkedin_Icon.svg";
-import Instagram_Icon from "/Instagram_Icon.svg";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 import Danilo from "/Danilo.webp";
 import { AnchorLinks } from "../../components/Global/AnchorLinks";
@@ -41,21 +39,24 @@ export default function Aside() {
 
   const iconeLinks = [
     {
-      src: Github_Icon,
-      alt: "Icone de Link para o Github",
-      href: "https://github.com/JoseDaniloS"
+      icon: FaGithub,
+      alt: "GitHub",
+      href: "https://github.com/JoseDaniloS",
+      
     },
     {
-      src: Linkedin_Icon,
-      alt: "Icone de Link para o Linkedin",
-      href: "https://www.linkedin.com/in/josedanilos/"
+      icon: FaLinkedin,
+      alt: "LinkedIn",
+      href: "https://www.linkedin.com/in/josedanilos/",
+      
     },
     {
-      src: Instagram_Icon,
-      alt: "Icone de Link para o Instagram",
-      href: "https://www.instagram.com/jdanilos_/"
+      icon: FaInstagram,
+      alt: "Instagram",
+      href: "https://www.instagram.com/jdanilos_/",
     }
   ];
+
   return (
     <div className="w-1/5 max-lg:hidden h-full overflow-auto fixed left-0 text-[#FFFFFFDE] bg-[#00000070]  flex flex-col justify-around items-center">
       {/* Foto de Perfil */}
@@ -80,13 +81,19 @@ export default function Aside() {
 
       {/* Redes Sociais */}
       <div className="w-full flex justify-center gap-[20px] items-center py-2">
-        {iconeLinks.map((link, index) =>
+        {iconeLinks.map(({ icon: Icon, alt, href}) =>
           <a
-            href={link.href}
-            className="hover:scale-125 transition-all duration-300 focus:outline-none"
-            key={index}
+            key={alt}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={alt}
+            className="transition-transform hover:scale-110"
           >
-            <img src={link.src} alt={link.alt} loading="lazy" className="w-6" />
+            <Icon
+              size={28}
+              className="text-neon-red hover:text-white transition-colors drop-shadow-[0_0_10px_#FF3D3D]"
+            />
           </a>
         )}
       </div>

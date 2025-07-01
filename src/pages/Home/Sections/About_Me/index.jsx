@@ -19,9 +19,7 @@ export default function AboutMe() {
           <div className="flex flex-col gap-5 md:text-left">
             <h2 className="text-3xl max-md:text-2xl text-white font-bold">
               Eu sou <TextRedShadow>José Danilo</TextRedShadow>, um
-              <span className="font-bold text-white">
-                {" "}desenvolvedor front-end
-              </span>, CEO da
+              desenvolvedor front-end CEO da
               <TextRedShadow> Chronos - Web Soluções</TextRedShadow> e
               pesquisador no projeto Carcará.
             </h2>
@@ -123,7 +121,7 @@ function PersonalInfo() {
 
   return (
     <div className="flex flex-col gap-5 text-xl w-full md:w-auto">
-      {personalData.map((item) =>
+      {personalData.map(item =>
         <p key={item.label} className="border-b border-[#303030] py-2">
           <i className="font-bold text-white">{item.label}:</i> {item.value}
         </p>

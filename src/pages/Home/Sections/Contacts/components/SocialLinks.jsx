@@ -1,32 +1,28 @@
-import Whatsapp from "/icons8-whatsapp.svg";
-import Gmail from "/icons8-gmail.svg";
-import Linkedin from "/icons8-linkedin.svg";
+import { FaWhatsapp, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { motion } from "motion/react";
 import { motionConfig } from "../../../../../utils/functions";
 
 const socialLinks = [
   {
     href: "https://wa.link/vu7mlc",
-    img: Whatsapp,
-    alt: "WhatsApp",
+    icon: FaWhatsapp,
     label: "WhatsApp",
-    color: "hover:text-green-400"
+    
   },
   {
     href: "mailto:danilojose.1d@gmail.com",
-    img: Gmail,
-    alt: "E-mail",
+    icon: FaEnvelope,
     label: "Gmail",
-    color: "hover:text-blue-400"
+    
   },
   {
     href: "https://www.linkedin.com/in/josedanilos/",
-    img: Linkedin,
-    alt: "LinkedIn",
+    icon: FaLinkedin,
     label: "LinkedIn",
-    color: "hover:text-gray-400"
-  }
+    
+  },
 ];
+
 
 export default function SocialLinks() {
   return (
@@ -40,11 +36,12 @@ export default function SocialLinks() {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`flex flex-col items-center p-3 gap-3 text-white font-semibold transition ${link.color}`}
+          className={`flex flex-col group items-center hover:scale-105 p-3 gap-3 font-semibold transition `}
           aria-label={link.alt}
         >
-          <img src={link.img} alt={link.alt} className="max-md:w-2/4 max-md:h-2/4 h-2/4" />
-          <p className="text-nowrap">
+         <link.icon size={48} className="text-neon-red group-hover:text-neon-red-hover transition-colors group-hover:drop-shadow-[0_0_10px_#FF3D3D]" />
+
+          <p className="text-nowrap group-hover:text-neon-red-hover group-hover:text-shadow-lg text-shadow-neon-red">
             {link.label}
           </p>
         </a>

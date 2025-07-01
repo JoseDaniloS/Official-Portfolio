@@ -9,7 +9,7 @@ export default function Contacts() {
   return (
     <div
       id="contact"
-      className="w-full min-h-screen flex flex-col items-center justify-center py-20 gap-10 px-6 text-[#ccc]"
+      className="w-full min-h-screen flex flex-col items-center justify-center py-20 gap-10 px-6 text-white"
     >
       <TitleSections text="Contato" />
 

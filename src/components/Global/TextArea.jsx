@@ -18,7 +18,7 @@ const TextArea  = forwardRef(function TextArea(
             />
             <label
                 htmlFor={name}
-                className={`absolute left-4 
+                className={`absolute left-4 bg-[#080808]
                 peer-focus:text-brand-text peer-placeholder-shown:text-brand-muted px-1 -top-2.5 text-sm transition-all 
                 peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base  text-brand-muted
                 peer-focus:-top-2.5 peer-focus:text-sm`}

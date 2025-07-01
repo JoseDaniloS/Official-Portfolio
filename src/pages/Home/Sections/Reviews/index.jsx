@@ -3,8 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useEffect, useRef, useState } from "react";
-import StarRed from "/FeedbacksIcons/StarRed.png";
-import StarWhite from "/FeedbacksIcons/StarWhite.png";
 import { reviews } from "../../../../database/Feedbacks";
 import { motion } from "framer-motion";
 import { motionConfig } from "../../../../utils/functions";
@@ -41,7 +39,7 @@ export default function Reviews() {
       <TitleSections text="Feedbacks" />
       <motion.p
         {...motionConfig}
-        className="text-3xl max-md:text-2xl text-[#bbb] font-bold md:w-[80%] max-md:w-[90vw] mb-10"
+        className="text-3xl max-md:text-2xl text-white font-bold md:w-[80%] max-md:w-[90vw] mb-10"
       >
         Esses depoimentos refletem a experiência de profissionais com os quais
         tive o privilégio de colaborar.<br />Agradeço a cada um pela confiança e
@@ -78,7 +76,7 @@ function ReviewCard({ name, role, image, feedback, stars }) {
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-[#181818] p-6 flex flex-col gap-4 rounded-xl text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#202020]"
+      className="p-6 flex flex-col gap-4 rounded-xl text-white  transition-transform duration-300 hover:scale-105  backdrop-blur-md shadow-lg border border-white/3"
     >
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-4">
@@ -101,7 +99,7 @@ function ReviewCard({ name, role, image, feedback, stars }) {
           {Array.from({ length: 5 }).map(
             (_, index) =>
               index < stars
-                ? <FaStar color="#FF1744"/>
+                ? <FaStar color="#FF1744" />
                 : <FaStar color="#fefefe" />
           )}
         </div>

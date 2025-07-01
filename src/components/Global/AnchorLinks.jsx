@@ -10,7 +10,7 @@ export function AnchorLinks({ activeSection, menuItems, setMenuOpen }) {
               href={item.href}
               className={`transition-colors duration-500 hover:neon-red-hover ${activeSection ===
               item.href
-                ? "text-white text-shadow-neon-red text-shadow-lg"
+                ? "text-white text-shadow-neon-red text-shadow-lg italic"
                 : ""}`}
               onClick={e => {
                 e.preventDefault();

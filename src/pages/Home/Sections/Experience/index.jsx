@@ -46,7 +46,7 @@ function ExperienceCard({ logo, cargo, project, start, end }) {
   return (
     <motion.div
       {...motionConfig}
-      className="relative w-[500px] max-w-full min-w-[300px] bg-[] pt-16 px-6 pb-8 rounded-3xl mt-4 flex flex-col items-center gap-5 transition-all duration-300 hover:scale-[1.02]"
+      className="relative w-[500px] max-w-full min-w-[300px] backdrop-blur-md shadow-lg border border-white/3 pt-16 px-6 pb-8 rounded-3xl mt-4 flex flex-col items-center gap-5 transition-all duration-300 hover:scale-[1.02]"
     >
       {/* Ícone flutuante com glow */}
       <div className="absolute -top-12 py-4 px-8 rounded-t-2xl flex items-center justify-center">
@@ -108,7 +108,7 @@ function HardSkillCard({ nome, icon, description }) {
     <>
       <motion.div
         {...motionConfig}
-        className="flex relative flex-col items-center bg-[#181818] text-white p-6 rounded-xl shadow-md border border-[#303030] transition-all duration-300 hover:scale-105 hover:border-neon-red hover:shadow-neon-red-hover hover:shadow-lg cursor-pointer"
+        className="flex relative flex-col items-center  text-white p-6 rounded-xl  backdrop-blur-md shadow-lg border border-white/3 transition-all duration-300 hover:scale-105 hover:border-neon-red hover:shadow-neon-red-hover hover:shadow-lg cursor-pointer"
         onClick={() => setShowModal(true)} // Abre o modal ao clicar no card
       >
         <img
