@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import TextRedShadow from "../Global/TextRedShadow";
 
-export function SkillModal({ nome, icon, description, onClose }) {
+export function SkillModal({ nome, icon: Icon, description, onClose }) {
   const modalRef = useRef(null);
 
   // Efeito para fechar o modal ao clicar fora dele
@@ -37,7 +37,7 @@ export function SkillModal({ nome, icon, description, onClose }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={() => onClose()}
-        className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0e0e0e70] backdrop-blur-md p-4"
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0e0e0e70] backdrop-blur-sm p-4"
       >
         {/* Modal content */}
         <motion.div
@@ -47,7 +47,7 @@ export function SkillModal({ nome, icon, description, onClose }) {
           exit={{ y: 50, opacity: 0, scale: 0.8 }}
           transition={{ type: "spring", stiffness: 560, damping: 20 }}
           onClick={e => e.stopPropagation()}
-          className="relative max-w-md max-md:w-[90vw] w-full bg-[#181818] text-white rounded-lg p-8 shadow-2xl border border-[#303030] overflow-y-auto max-h-[90vh]"
+          className="flex relative max-w-md flex-col items-center  text-white p-6 rounded-xl  backdrop-blur-lg shadow-lg border border-white/3"
         >
           {/* Botão de Fechar */}
           <button
@@ -60,11 +60,7 @@ export function SkillModal({ nome, icon, description, onClose }) {
 
           {/* Conteúdo do Modal */}
           <div className="flex flex-col items-center gap-6">
-            <img
-              src={icon}
-              alt={`Ícone de ${nome}`}
-              className="w-24 h-24 object-contain"
-            />
+            <Icon size={48} className="text-neon-red-hover transition-colors drop-shadow-[0_0_10px_#FF3D3D]" />
             <TextRedShadow className="text-3xl font-bold">
               {nome}
             </TextRedShadow>

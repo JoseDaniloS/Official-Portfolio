@@ -96,7 +96,7 @@ function HardSkills() {
   );
 }
 
-function HardSkillCard({ nome, icon, description }) {
+function HardSkillCard({ nome, icon: Icon, description }) {
   const [showModal, setShowModal] = useState(false);
 
   // Função para fechar o modal
@@ -108,22 +108,18 @@ function HardSkillCard({ nome, icon, description }) {
     <>
       <motion.div
         {...motionConfig}
-        className="flex relative flex-col items-center  text-white p-6 rounded-xl  backdrop-blur-md shadow-lg border border-white/3 transition-all duration-300 hover:scale-105 hover:border-neon-red hover:shadow-neon-red-hover hover:shadow-lg cursor-pointer"
+        className="flex relative flex-col items-center  text-white p-6 rounded-xl  backdrop-blur-md shadow-lg border border-white/3 transition-all gap-2 duration-300 hover:scale-105 hover:border-neon-red hover:shadow-neon-red-hover group hover:shadow-lg cursor-pointer"
         onClick={() => setShowModal(true)} // Abre o modal ao clicar no card
       >
-        <img
-          src={icon}
-          alt={`Ícone de ${nome}`}
-          className="w-16 h-16 object-contain"
-          loading="lazy"
-        />
+        <Icon size={48} className="text-neon-red group-hover:text-neon-red-hover transition-colors group-hover:drop-shadow-[0_0_10px_#FF3D3D]" />
+        <p>{nome}</p>
       </motion.div>
 
       {/* Renderiza o modal condicionalmente */}
       {showModal && (
         <SkillModal
           nome={nome}
-          icon={icon}
+          icon={Icon}
           description={description}
           onClose={handleCloseModal} // Passa a função de fechamento para o modal
         />

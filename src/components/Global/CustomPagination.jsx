@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 export function CustomPagination({ size, activeIndex }) {
   const VISIBLE_DOTS = 4;
-  const DOT_SIZE = 32;
-  const GAP = 8;
+  const DOT_SIZE = 16;
+  const GAP = 4;
   const DOT_SPACING = DOT_SIZE + GAP;
 
   const [previousIndex, setPreviousIndex] = useState(activeIndex);
@@ -61,7 +61,7 @@ export function CustomPagination({ size, activeIndex }) {
             key={index}
             style={{
               minWidth: `${DOT_SIZE}px`,
-              minHeight: `${4}px`,
+              minHeight: `${3}px`,
               backgroundColor: "#FFFFFF3A",
               marginRight: index !== size - 1 ? `${GAP}px` : 0,
             }}

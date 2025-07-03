@@ -99,8 +99,8 @@ function ReviewCard({ name, role, image, feedback, stars }) {
           {Array.from({ length: 5 }).map(
             (_, index) =>
               index < stars
-                ? <FaStar color="#FF1744" />
-                : <FaStar color="#fefefe" />
+                ? <FaStar key={index} color="#FF1744" />
+                : <FaStar key={index} color="#fefefe" />
           )}
         </div>
       </div>

@@ -37,12 +37,12 @@ export function ProjectModal({ projectsData, onClose }) {
     <AnimatePresence>
       <div
         onClick={onClose}
-        className="fixed inset-0 flex h-dvh items-center justify-center backdrop-blur-md bg-[#00000099] text-white z-30"
+        className="fixed inset-0 flex h-dvh items-center justify-center backdrop-blur-sm bg-[#00000099] text-white z-30"
       >
         <motion.div
         {...modalVariants}
           onClick={(e) => e.stopPropagation()}
-          className="bg-[#252525] z-40 relative max-md:w-[90vw] max-w-[1170px] p-6 rounded shadow-lg overflow-y-auto max-h-[90vh]"
+          className="z-40 relative max-md:w-[90vw] flex-col items-center rounded-xl  backdrop-blur-lg shadow-lg border border-white/3 max-w-[1170px] p-6  overflow-y-auto max-h-[90vh]"
         >
           {/* Botão de fechar */}
           <button
