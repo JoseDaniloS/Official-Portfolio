@@ -17,6 +17,7 @@ const Footer = lazy(() => import("../../layout/Footer"));
 
 // A importação do TitleAnimateForEntry agora é estática.
 import TitleAnimateForEntry from "../../components/Global/TitleAnimateForEntry";
+import Achievements from "./Sections/Achievements";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
           <Center />
           <AboutMe />
           <Experience />
+          <Achievements />
           <Projects />
           <Reviews />
           <Contacts />

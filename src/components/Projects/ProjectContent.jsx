@@ -9,13 +9,13 @@ export function ProjectContent({ projectsData, onMoreDetails}) {
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
       viewport={{ once: false }}
-      className="max-md:w-[90vw] max-md:h-[450px] bg-[#242A45] rounded-[2px] overflow-hidden relative flex flex-col items-center justify-center"
+      className="max-md:w-[90vw] max-md:h-[450px] h-[600px] bg-[#242A45] rounded-[2px] overflow-hidden relative flex flex-col items-center justify-center"
     >
       <img
         src={projectsData.image}
         alt={projectsData.title}
         loading="lazy"
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain"
       />
       <div className="absolute bottom-0 left-0 p-7 h-full w-full flex flex-col justify-end gap-5 bg-gradient-to-t from-[#000000] to-transparent">
         <div>

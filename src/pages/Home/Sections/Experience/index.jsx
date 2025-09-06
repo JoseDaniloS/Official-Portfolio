@@ -8,6 +8,7 @@ import { habilidades } from "../../../../database/Habilidades";
 import TextRedShadow from "../../../../components/Global/TextRedShadow";
 import { useState } from "react";
 import { SkillModal } from "../../../../components/Experience/SkillModal";
+import BrutalistButton from "../../../../components/Global/BrutalistButton";
 
 export default function Experience() {
   const experiences = [
@@ -16,15 +17,15 @@ export default function Experience() {
       cargo: "Desenvolvedor Front End",
       project: "Chronos - Web Soluções",
       start: "Jan/2025",
-      end: "Até o Momento"
+      end: "Até o Momento",
     },
     {
       logo: Carcara,
       cargo: "Desenvolvedor de Software",
       project: "Projeto Carcará - UFERSA",
       start: "Ago/2024",
-      end: "Até o Momento"
-    }
+      end: "Até o Momento",
+    },
   ];
 
   return (
@@ -34,7 +35,9 @@ export default function Experience() {
     >
       <TitleSections text="Experiência" />
       <div className="md:w-[80%] max-md:w-[90vw] flex flex-wrap justify-center gap-8 text-white">
-        {experiences.map(exp => <ExperienceCard key={exp.project} {...exp} />)}
+        {experiences.map((exp) => (
+          <ExperienceCard key={exp.project} {...exp} />
+        ))}
       </div>
       <SoftSkills />
       <HardSkills />
@@ -90,43 +93,39 @@ function HardSkills() {
         Hard Skills
       </h2>
       <div className="w-full grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-7 justify-center items-center">
-        {habilidades.map(hab => <HardSkillCard key={hab.nome} {...hab} />)}
+        {habilidades.map((hab) => (
+          <HardSkillCard key={hab.nome} {...hab} />
+        ))}
       </div>
     </section>
   );
 }
 
+
+
 function HardSkillCard({ nome, icon: Icon, description }) {
   const [showModal, setShowModal] = useState(false);
 
-  // Função para fechar o modal
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
   return (
     <>
-      <motion.div
-        {...motionConfig}
-        className="flex relative flex-col items-center  text-white p-6 rounded-xl  backdrop-blur-md shadow-lg border border-white/3 transition-all gap-2 duration-300 hover:scale-105 hover:border-neon-red hover:shadow-neon-red-hover group hover:shadow-lg cursor-pointer"
-        onClick={() => setShowModal(true)} // Abre o modal ao clicar no card
-      >
-        <Icon size={48} className="text-neon-red group-hover:text-neon-red-hover transition-colors group-hover:drop-shadow-[0_0_10px_#FF3D3D]" />
-        <p>{nome}</p>
-      </motion.div>
-
-      {/* Renderiza o modal condicionalmente */}
+      <BrutalistButton
+        logo={Icon}
+        title={nome}
+        subtitle="Powered by"
+        hoverColor="#FF3D3D"
+        onClick={() => setShowModal(true)}
+      />
       {showModal && (
         <SkillModal
           nome={nome}
           icon={Icon}
           description={description}
-          onClose={handleCloseModal} // Passa a função de fechamento para o modal
+          onClose={() => setShowModal(false)}
         />
       )}
     </>
   );
-}
+}       
 
 function SoftSkills() {
   const skills = [
@@ -137,7 +136,7 @@ function SoftSkills() {
     "Liderança",
     "Pensamento crítico",
     "Gestão de tempo",
-    "Criatividade"
+    "Criatividade",
   ];
 
   return (
@@ -146,7 +145,7 @@ function SoftSkills() {
         Soft Skills
       </h2>
       <div className="flex flex-wrap justify-center gap-4">
-        {skills.map((skill, index) =>
+        {skills.map((skill, index) => (
           <motion.div
             {...motionConfig}
             key={index}
@@ -154,7 +153,7 @@ function SoftSkills() {
           >
             {skill}
           </motion.div>
-        )}
+        ))}
       </div>
     </section>
   );

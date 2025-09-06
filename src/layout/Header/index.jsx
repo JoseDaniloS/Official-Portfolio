@@ -1,6 +1,7 @@
 import Hamburger from "hamburger-react";
 import { useEffect, useRef, useState } from "react";
 import { AnchorLinks } from "../../components/Global/AnchorLinks";
+import { menuItems } from "../../database/menuIcons";
 
 export default function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
@@ -19,14 +20,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const menuItems = [
-    { name: "Início", href: "home" },
-    { name: "Sobre mim", href: "about" },
-    { name: "Experiência", href: "experience" },
-    { name: "Projetos", href: "projects" },
-    { name: "Feedbacks", href: "reviews" },
-    { name: "Contato", href: "contact" }
-  ];
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (

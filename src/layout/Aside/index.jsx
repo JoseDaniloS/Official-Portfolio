@@ -3,22 +3,15 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Danilo from "/Danilo.webp";
 import { AnchorLinks } from "../../components/Global/AnchorLinks";
 import { useEffect, useState } from "react";
+import { menuItems } from "../../database/menuIcons";
 
 export default function Aside() {
   const [activeSection, setActiveSection] = useState("home");
 
-  const menuItems = [
-    { name: "Início", href: "home" },
-    { name: "Sobre mim", href: "about" },
-    { name: "Experiência", href: "experience" },
-    { name: "Projetos", href: "projects" },
-    { name: "Feedbacks", href: "reviews" },
-    { name: "Contato", href: "contact" }
-  ];
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        entries.some(entry => {
+      (entries) => {
+        entries.some((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
@@ -27,7 +20,7 @@ export default function Aside() {
       { threshold: 0.5 }
     );
 
-    menuItems.forEach(item => {
+    menuItems.forEach((item) => {
       const element = document.getElementById(item.href);
       if (element) {
         observer.observe(element);
@@ -42,19 +35,17 @@ export default function Aside() {
       icon: FaGithub,
       alt: "GitHub",
       href: "https://github.com/JoseDaniloS",
-      
     },
     {
       icon: FaLinkedin,
       alt: "LinkedIn",
       href: "https://www.linkedin.com/in/josedanilos/",
-      
     },
     {
       icon: FaInstagram,
       alt: "Instagram",
       href: "https://www.instagram.com/jdanilos_/",
-    }
+    },
   ];
 
   return (
@@ -81,7 +72,7 @@ export default function Aside() {
 
       {/* Redes Sociais */}
       <div className="w-full flex justify-center gap-[20px] items-center py-2">
-        {iconeLinks.map(({ icon: Icon, alt, href}) =>
+        {iconeLinks.map(({ icon: Icon, alt, href }) => (
           <a
             key={alt}
             href={href}
@@ -95,7 +86,7 @@ export default function Aside() {
               className="text-neon-red hover:text-white transition-colors drop-shadow-[0_0_10px_#FF3D3D]"
             />
           </a>
-        )}
+        ))}
       </div>
     </div>
   );

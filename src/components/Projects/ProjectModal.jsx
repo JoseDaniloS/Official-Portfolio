@@ -40,7 +40,7 @@ export function ProjectModal({ projectsData, onClose }) {
         className="fixed inset-0 flex h-dvh items-center justify-center backdrop-blur-sm bg-[#00000099] text-white z-30"
       >
         <motion.div
-        {...modalVariants}
+          {...modalVariants}
           onClick={(e) => e.stopPropagation()}
           className="z-40 relative max-md:w-[90vw] flex-col items-center rounded-xl  backdrop-blur-lg shadow-lg border border-white/3 max-w-[1170px] p-6  overflow-y-auto max-h-[90vh]"
         >
@@ -54,11 +54,13 @@ export function ProjectModal({ projectsData, onClose }) {
           </button>
 
           {/* Conteúdo do modal */}
-          <img
-            src={projectsData.image}
-            alt={projectsData.title}
-            className="w-full rounded mb-4"
-          />
+          <div className="h-[700px]">
+            <img
+              src={projectsData.image}
+              alt={projectsData.title}
+              className="w-full object-contain h-full rounded mb-4"
+            />
+          </div>
 
           <h2 className="text-xl font-bold mb-4">{projectsData.title}</h2>
 
