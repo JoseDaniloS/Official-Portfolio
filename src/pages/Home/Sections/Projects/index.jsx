@@ -32,7 +32,7 @@ export default function Projects() {
         
         onSwiper={swiper => (swiperRef.current = swiper)}
         onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
-        className="md:w-[80%] max-md:w-[90vw]"
+        className="md:w-[90%] max-md:w-[90vw]"
       >
         {ProjectsInfo.map(project =>
           <SwiperSlide key={project.id}>

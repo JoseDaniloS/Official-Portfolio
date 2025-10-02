@@ -1,39 +1,40 @@
 import { motion } from "framer-motion";
-import "./global.css"
+import "./global.css";
 
-
-export function ProjectContent({ projectsData, onMoreDetails}) {
+export function ProjectContent({ projectsData, onMoreDetails }) {
   return (
     <motion.article
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.3 }}
-      viewport={{ once: false }}
-      className="max-md:w-[90vw] max-md:h-[450px] h-[600px] bg-[#242A45] rounded-[2px] overflow-hidden relative flex flex-col items-center justify-center"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      viewport={{ once: true }}
+      className="group relative h-[700px] w-full max-md:h-[450px] overflow-hidden rounded-lg bg-[#242A45] shadow-lg transition-transform duration-500 ease-in-out  hover:shadow-2xl"
     >
       <img
         src={projectsData.image}
         alt={projectsData.title}
         loading="lazy"
-        className="w-full h-full object-contain"
+        className="h-full w-full object-cover"
       />
-      <div className="absolute bottom-0 left-0 p-7 h-full w-full flex flex-col justify-end gap-5 bg-gradient-to-t from-[#000000] to-transparent">
-        <div>
-          <h3 className="text-2xl max-md:text-[16px] font-semibold text-white">
+
+      {/* Overlay com gradiente aprimorado */}
+      <div className="absolute inset-0 flex flex-col justify-end gap-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-7">
+        <div className="transform transition-transform duration-500 group-hover:translate-y-[-10px]">
+          <h3 className="text-2xl font-semibold text-white max-md:text-[16px]">
             {projectsData.title}
           </h3>
-          <p className="text-white max-md:text-[13px]">
+          <p className="text-sm text-gray-300 max-md:text-[13px]">
             {projectsData.shortDescription}
           </p>
         </div>
+        
         <button
           onClick={onMoreDetails}
-          className="self-start neon-red-button cursor-pointer  font-medium px-4 max-md:p-2 max-md:text-[12px] py-2 rounded  hover:scale-105 transition duration-500"
+          className="self-start cursor-pointer rounded-md border border-white/50 bg-white/10 px-4 py-2 text-white shadow-md backdrop-blur-md transition-all duration-300 hover:border-white hover:bg-white hover:text-black hover:scale-105 max-md:px-3 max-md:py-1 max-md:text-[12px]"
         >
-          Mostrar mais detalhes
+          Ver Detalhes
         </button>
       </div>
     </motion.article>
   );
 }
-

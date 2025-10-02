@@ -1,5 +1,3 @@
-import React from "react";
-
 const BrutalistButton = ({ logo: Logo, title, subtitle, onClick }) => {
   return (
     <button

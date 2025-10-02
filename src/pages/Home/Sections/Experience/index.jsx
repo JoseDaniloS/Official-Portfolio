@@ -7,7 +7,6 @@ import { motionConfig } from "../../../../utils/functions";
 import { habilidades } from "../../../../database/Habilidades";
 import TextRedShadow from "../../../../components/Global/TextRedShadow";
 import { useState } from "react";
-import { SkillModal } from "../../../../components/Experience/SkillModal";
 import BrutalistButton from "../../../../components/Global/BrutalistButton";
 
 export default function Experience() {
@@ -113,16 +112,7 @@ function HardSkillCard({ nome, icon: Icon, description }) {
         title={nome}
         subtitle="Powered by"
         hoverColor="#FF3D3D"
-        onClick={() => setShowModal(true)}
       />
-      {showModal && (
-        <SkillModal
-          nome={nome}
-          icon={Icon}
-          description={description}
-          onClose={() => setShowModal(false)}
-        />
-      )}
     </>
   );
 }       

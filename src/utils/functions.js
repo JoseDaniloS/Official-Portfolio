@@ -1,6 +1,6 @@
 /**
  * Realiza um scroll suave para a seção com o ID especificado.
- * 
+ *
  * @param {string} id - O ID da seção para onde o scroll será feito.
  * @example
  * scrollToSection("about_we");
@@ -17,7 +17,7 @@ export function scrollToSection(id) {
 export const handleClick = () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 };
 
@@ -28,3 +28,7 @@ export const motionConfig = {
   transition: { duration: 0.5, ease: [0.42, 0, 0.58, 1] },
 };
 
+// Função utilitária
+export function formatDate(dateString) {
+  return new Date(dateString).toLocaleDateString("pt-BR");
+}

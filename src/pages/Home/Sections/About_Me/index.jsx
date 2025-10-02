@@ -25,38 +25,57 @@ export default function AboutMe() {
             </h2>
             <p>
               Sou apaixonado por{" "}
-              <span className="font-bold text-white">
-                desenvolvimento web
-              </span>{" "}
+              <span className="font-bold text-white">desenvolvimento web</span>{" "}
               e{" "}
               <span className="font-bold text-white">computação em nuvem</span>,
-              sempre buscando criar soluções inovadoras e eficientes.
-              Atualmente, atuo como{" "}
+              sempre em busca de criar soluções digitais inovadoras e
+              eficientes. Atualmente, atuo como{" "}
               <span className="font-bold text-white">
                 desenvolvedor front-end
+              </span>
+              ,{" "}
+              <span className="font-bold text-white">
+                parceiro oficial do Mercado Pago
               </span>{" "}
               e líder da{" "}
               <span className="font-bold text-white">
                 Chronos - Web Soluções
-              </span>, onde ajudo empresas e profissionais a transformar ideias
-              em produtos digitais de alto impacto.
+              </span>
+              , onde ajudo empresas e profissionais a transformar ideias em
+              produtos digitais de alto impacto.
             </p>
             <p>
-              Além disso, faço parte do{" "}
+              Além disso, sou graduando em{" "}
+              <span className="font-bold text-white">
+                Tecnologia da Informação pela UFERSA
+              </span>{" "}
+              e também concluí a formação em{" "}
+              <span className="font-bold text-white">
+                Técnico em Informática no Balbina Viana Arrais
+              </span>
+              . Minha trajetória acadêmica e profissional reflete o compromisso
+              em unir conhecimento técnico e visão prática para gerar soluções
+              relevantes.
+            </p>
+            <p>
+              Faço parte do{" "}
               <span className="font-bold text-white">
                 projeto de pesquisa Carcará na UFERSA
-              </span>, onde contribuo para o desenvolvimento de sistemas que
-              aprimoram a infraestrutura de TI e a experiência acadêmica.
+              </span>
+              , onde contribuo para o desenvolvimento de sistemas que aprimoram
+              a infraestrutura de TI e a experiência acadêmica.
             </p>
             <p>
-              Meu foco está em desenvolver{" "}
+              Meu foco está em criar{" "}
               <span className="font-bold text-white">
                 interfaces modernas, responsivas e de alta performance
-              </span>, utilizando tecnologias como{" "}
+              </span>
+              , utilizando tecnologias como{" "}
               <span className="font-bold text-white">
                 React, Tailwind CSS e TypeScript
-              </span>. Acredito no aprendizado contínuo e na colaboração para
-              criar produtos digitais que realmente fazem a diferença.
+              </span>
+              . Acredito no aprendizado contínuo e na colaboração para construir
+              produtos digitais que realmente fazem a diferença.
             </p>
           </div>
         </div>

@@ -49,7 +49,7 @@ export default function Aside() {
   ];
 
   return (
-    <div className="w-1/5 max-lg:hidden h-full overflow-auto fixed left-0 text-[#FFFFFFDE] bg-[#00000070]  flex flex-col justify-around items-center">
+    <div className="w-1/5 max-lg:hidden h-full overflow-auto fixed p-3 left-0 text-[#FFFFFFDE] bg-[#00000070]  flex flex-col justify-around items-center">
       {/* Foto de Perfil */}
       <div className="w-full h-1/2 flex flex-col justify-center items-center p-10 gap-[10px]">
         <img src={Danilo} alt="Foto de Perfil José Danilo" loading="lazy" />
