@@ -11,7 +11,7 @@ const Center = lazy(() => import("./Sections/Center"));
 const AboutMe = lazy(() => import("./Sections/About_Me"));
 const Experience = lazy(() => import("./Sections/Experience"));
 const Projects = lazy(() => import("./Sections/Projects"));
-const Reviews = lazy(() => import("./Sections/Reviews"));
+// const Reviews = lazy(() => import("./Sections/Reviews"));
 const Contacts = lazy(() => import("./Sections/Contacts"));
 const Footer = lazy(() => import("../../layout/Footer"));
 
@@ -33,7 +33,7 @@ export default function Home() {
           <Experience />
           <Achievements />
           <Projects />
-          <Reviews />
+          {/* <Reviews /> */}
           <Contacts />
           <Footer />
         </div>

@@ -4,7 +4,7 @@ import InsigniaMercadoPago from "../assets/Insignia_MercadoPago.svg";
 export const softwareRegistrations = [
   {
     id: 1,
-    title: "Folha Frequência - UFERSA",
+    title: "Folha Frequência - UFERSA (Front)",
     registrationNumber: "BR512025002187-9",
     date: "2024-11-30",
     institution: "INPI - Instituto Nacional da Propriedade Industrial",
@@ -41,6 +41,36 @@ export const softwareRegistrations = [
     description:
       "Portal front-end voltado para divulgação e gerenciamento de conteúdo relacionado à comunidade de desenvolvedores UFERSA DEV.",
     technologies: ["HTML", "Javascript", "React", "CSS"],
+  },
+  {
+    id: 5,
+    title: "Calculadora de Pontes com Palitos de Picolé Treliçados",
+    registrationNumber: "BR512025003367-2",
+    date: "2025-05-28",
+    institution: "INPI - Instituto Nacional da Propriedade Industrial",
+    description:
+      "A Calculadora de Pontes com Palitos de Picolé Treliçados da UFERSA é uma aplicação web desenvolvida em React, cujo objetivo é auxiliar estudantes e/ou pesquisadores no cálculo da análise estrutural de protótipos treliçados de pontes com palitos de picolé.",
+    technologies: ["HTML", "Javascript", "React", "CSS"],
+  },
+  {
+    id: 6,
+    title: "ECONOQUIZ (Front)",
+    registrationNumber: "BR512026000816-6",
+    date: "2025-10-28",
+    institution: "INPI - Instituto Nacional da Propriedade Industrial",
+    description:
+      "Ferramenta computacional de gamificação educacional estruturada sobre um motor de lógica de perguntas e respostas. Apresenta uma interface gráfica interativa onde o usuário enfrenta cenários baseados na ODS 8 e em teoria econômica, contando com rotinas de feedback instantâneo, reforço pedagógico e armazenamento de métricas de desempenho.",
+    technologies: ["HTML", "Javascript", "React", "CSS"],
+  },
+  {
+    id: 7,
+    title: "ECONOQUIZ (Back)",
+    registrationNumber: "BR512026000819-0",
+    date: "2025-10-28",
+    institution: "INPI - Instituto Nacional da Propriedade Industrial",
+    description:
+      "Motor lógico e infraestrutura de back-end do EconoQuiz. Responsável pelo gerenciamento do banco de dados de perguntas e respostas sobre a ODS 8 e teoria econômica, execução do algoritmo de validação de inputs, processamento das rotinas de pontuação e persistência das métricas de desempenho para geração de relatórios de evolução.",
+    technologies: ["Node.js", "Javascript", "Express", "Database"],
   },
 ];
 

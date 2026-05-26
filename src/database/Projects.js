@@ -2,7 +2,8 @@ import Frequencia from "../assets/Projects/Frequencia.png";
 import Carcara from "../assets/Projects/Carcara.png";
 import ELI from "../assets/Projects/ELI.png";
 import UfersaDev from "../assets/Projects/UfersaDev.png";
-import LocalizaMartins from "../assets/Projects/LocalizaMartins.png";
+import Rebeca from "../assets/Projects/Rebeca.png"; // <-- Adicionado
+import VoluntariosLeitura from "../assets/Projects/VoluntariosLeitura.png"; // <-- Adicionado
 
 export const ProjectsInfo = [
   {
@@ -57,7 +58,6 @@ export const ProjectsInfo = [
     linkRepositorio: "https://github.com/JoseDaniloS/ELI-FrontEnd",
     url: "https://eli.ufersa.dev.br",
   },
-
   {
     id: 4,
     title: "UFERSA DEV",
@@ -75,19 +75,50 @@ export const ProjectsInfo = [
   },
   {
     id: 5,
-    title: "LocalizaMartins",
-    shortDescription: "Plataforma de localização e comércio local",
+    title: "Portal de Notícias - REBECA",
+    shortDescription: "Portal de comunicação e notícias do projeto REBECA",
     description: [
-      "Aplicação desenvolvida para auxiliar na <strong>localização de comércios e serviços na cidade de Martins/RN</strong>, permitindo que os usuários encontrem facilmente lojas, restaurantes e pontos turísticos.",
-      "O sistema oferece <strong>busca filtrada, integração com mapas e informações detalhadas sobre cada estabelecimento</strong>.",
-      "Com um design moderno e responsivo, a plataforma contribui para o <strong>fortalecimento do comércio local e incentivo ao turismo</strong>.",
-      "Possui <strong>integração com o Mercado Pago</strong>, permitindo que os usuários realizem <strong>compras e pagamentos diretamente dentro do aplicativo</strong> para uma experiência completa e segura.",
+      "Plataforma de comunicação digital projetada para centralizar a publicação de notícias, artigos institucionais e novidades do <strong>projeto REBECA</strong>.",
+      "Desenvolvido com uma arquitetura moderna que integra o <strong>Strapi como CMS Headless no back-end</strong>, garantindo uma gestão de conteúdo flexível e robusta para a equipe editorial.",
+      "Infraestrutura de deployment automatizada via pipeline de CI/CD utilizando um <strong>GitHub Actions Runner auto-hospedado</strong>, configurado especificamente para transpor as restrições e políticas de segurança do <strong>firewall da USP</strong>.",
+      "Ambiente de produção totalmente conteinerizado com <strong>Docker</strong>, utilizando o <strong>Nginx como proxy reverso</strong> para gerenciamento de tráfego, segurança e entrega de alta performance.",
     ],
-
-    image: LocalizaMartins,
-    stacks: ["React", "Tailwind CSS"],
+    image: Rebeca,
+    stacks: [
+      "React",
+      "Tailwind CSS",
+      "Strapi",
+      "Docker",
+      "Nginx",
+      "GitHub Actions",
+    ],
     authors: ["José Danilo"],
     sourceCode: false,
-    url: "https://www.localizamartins.ufersa.dev.br/home",
+    url: "https://redenacionalrebeca.icmc.usp.br", // Ajuste a URL se necessário
+  },
+  {
+    id: 6,
+    title: "Voluntários da Leitura",
+    shortDescription: "Plataforma de incentivo e gestão de projetos de leitura",
+    description: [
+      "Sistema voltado para a organização, engajamento e acompanhamento de ações ligadas ao projeto <strong>Voluntários da Leitura</strong>.",
+      "Front-end moderno e de alta disponibilidade publicado e distribuído globalmente através do <strong>AWS Amplify</strong>.",
+      "Back-end robusto estruturado com o <strong>Strapi CMS</strong>, utilizando o <strong>Amazon ECR (Elastic Container Registry)</strong> para o gerenciamento das imagens de contêineres e distribuído sob um <strong>Application Load Balancer (ALB)</strong> para alta disponibilidade e escalabilidade.",
+      "Persistência de dados configurada de forma isolada e segura através do <strong>Amazon RDS</strong> como banco de dados relacional e roteamento de tráfego inteligente gerenciado pelo <strong>AWS Route 53</strong>.",
+    ],
+    image: VoluntariosLeitura,
+    stacks: [
+      "React",
+      "Tailwind CSS",
+      "Strapi",
+      "AWS Amplify",
+      "AWS Route 53",
+      "Amazon ECR",
+      "Amazon RDS",
+      "Elastic Load Balancing",
+    ],
+    authors: ["José Danilo"],
+    sourceCode: false,
+    url: "https://voluntariosdaleitura.ufersa.dev.br", // Ajuste a URL se necessário
   },
 ];

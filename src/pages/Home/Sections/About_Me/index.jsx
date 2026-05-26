@@ -97,9 +97,9 @@ export default function AboutMe() {
         <legend>Participação no Evento Start-up Day 22/03/2025</legend>
         {/* Estatísticas */}
         <div className="md:w-[80%] max-md:w-[90vw] max-md:flex-col flex  justify-center md:justify-between text-[42px] gap-6">
-          <StatCard value="1+" label="Ano de Experiência" />
-          <StatCard value="5+" label="Clientes Satisfeitos" />
-          <StatCard value="7+" label="Projetos Realizados" />
+          <StatCard value="2+" label="Ano de Experiência" />
+          <StatCard value="10+" label="Clientes Satisfeitos" />
+          <StatCard value="15+" label="Projetos Realizados" />
         </div>
       </motion.div>
     </section>
