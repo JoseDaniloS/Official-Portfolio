@@ -96,29 +96,29 @@ export const ProjectsInfo = [
     sourceCode: false,
     url: "https://redenacionalrebeca.icmc.usp.br", // Ajuste a URL se necessário
   },
-  {
-    id: 6,
-    title: "Voluntários da Leitura",
-    shortDescription: "Plataforma de incentivo e gestão de projetos de leitura",
-    description: [
-      "Sistema voltado para a organização, engajamento e acompanhamento de ações ligadas ao projeto <strong>Voluntários da Leitura</strong>.",
-      "Front-end moderno e de alta disponibilidade publicado e distribuído globalmente através do <strong>AWS Amplify</strong>.",
-      "Back-end robusto estruturado com o <strong>Strapi CMS</strong>, utilizando o <strong>Amazon ECR (Elastic Container Registry)</strong> para o gerenciamento das imagens de contêineres e distribuído sob um <strong>Application Load Balancer (ALB)</strong> para alta disponibilidade e escalabilidade.",
-      "Persistência de dados configurada de forma isolada e segura através do <strong>Amazon RDS</strong> como banco de dados relacional e roteamento de tráfego inteligente gerenciado pelo <strong>AWS Route 53</strong>.",
-    ],
-    image: VoluntariosLeitura,
-    stacks: [
-      "React",
-      "Tailwind CSS",
-      "Strapi",
-      "AWS Amplify",
-      "AWS Route 53",
-      "Amazon ECR",
-      "Amazon RDS",
-      "Elastic Load Balancing",
-    ],
-    authors: ["José Danilo"],
-    sourceCode: false,
-    url: "https://voluntariosdaleitura.ufersa.dev.br", // Ajuste a URL se necessário
-  },
+  // {
+  //   id: 6,
+  //   title: "Voluntários da Leitura",
+  //   shortDescription: "Plataforma de incentivo e gestão de projetos de leitura",
+  //   description: [
+  //     "Sistema voltado para a organização, engajamento e acompanhamento de ações ligadas ao projeto <strong>Voluntários da Leitura</strong>.",
+  //     "Front-end moderno e de alta disponibilidade publicado e distribuído globalmente através do <strong>AWS Amplify</strong>.",
+  //     "Back-end robusto estruturado com o <strong>Strapi CMS</strong>, utilizando o <strong>Amazon ECR (Elastic Container Registry)</strong> para o gerenciamento das imagens de contêineres e distribuído sob um <strong>Application Load Balancer (ALB)</strong> para alta disponibilidade e escalabilidade.",
+  //     "Persistência de dados configurada de forma isolada e segura através do <strong>Amazon RDS</strong> como banco de dados relacional e roteamento de tráfego inteligente gerenciado pelo <strong>AWS Route 53</strong>.",
+  //   ],
+  //   image: VoluntariosLeitura,
+  //   stacks: [
+  //     "React",
+  //     "Tailwind CSS",
+  //     "Strapi",
+  //     "AWS Amplify",
+  //     "AWS Route 53",
+  //     "Amazon ECR",
+  //     "Amazon RDS",
+  //     "Elastic Load Balancing",
+  //   ],
+  //   authors: ["José Danilo"],
+  //   sourceCode: false,
+  //   url: "https://voluntariosdaleitura.ufersa.dev.br", // Ajuste a URL se necessário
+  // },
 ];

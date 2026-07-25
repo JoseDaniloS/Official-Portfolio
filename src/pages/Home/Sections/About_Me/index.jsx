@@ -8,7 +8,7 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="w-full min-h-screen max-xl:h-full flex flex-col items-center max-lg:mt-[88px] justify-around py-[40px] gap-20"
+      className="w-full min-h-screen max-xl:h-full flex flex-col items-center max-lg:mt-22 justify-around py-10 gap-20"
     >
       <TitleSections text="Sobre mim" />
       <motion.div
@@ -35,7 +35,7 @@ export default function AboutMe() {
               </span>
               ,{" "}
               <span className="font-bold text-white">
-                parceiro oficial do Mercado Pago
+                especialista em computação em nuvem
               </span>{" "}
               e líder da{" "}
               <span className="font-bold text-white">
@@ -43,6 +43,23 @@ export default function AboutMe() {
               </span>
               , onde ajudo empresas e profissionais a transformar ideias em
               produtos digitais de alto impacto.
+            </p>
+            <p>
+              Nosso carro-chefe é o{" "}
+              <span className="font-bold text-white">Chronos Payments</span>, um{" "}
+              <span className="font-bold text-white">
+                gateway de pagamentos completo
+              </span>
+              , com{" "}
+              <span className="font-bold text-white">gráficos de receita</span>,
+              gestão de{" "}
+              <span className="font-bold text-white">planos de assinatura</span>{" "}
+              e{" "}
+              <span className="font-bold text-white">
+                pagamentos individuais
+              </span>
+              , entre outras funcionalidades pensadas para dar visibilidade e
+              controle financeiro aos nossos clientes.
             </p>
             <p>
               Além disso, sou graduando em{" "}
@@ -56,26 +73,6 @@ export default function AboutMe() {
               . Minha trajetória acadêmica e profissional reflete o compromisso
               em unir conhecimento técnico e visão prática para gerar soluções
               relevantes.
-            </p>
-            <p>
-              Faço parte do{" "}
-              <span className="font-bold text-white">
-                projeto de pesquisa Carcará na UFERSA
-              </span>
-              , onde contribuo para o desenvolvimento de sistemas que aprimoram
-              a infraestrutura de TI e a experiência acadêmica.
-            </p>
-            <p>
-              Meu foco está em criar{" "}
-              <span className="font-bold text-white">
-                interfaces modernas, responsivas e de alta performance
-              </span>
-              , utilizando tecnologias como{" "}
-              <span className="font-bold text-white">
-                React, Tailwind CSS e TypeScript
-              </span>
-              . Acredito no aprendizado contínuo e na colaboração para construir
-              produtos digitais que realmente fazem a diferença.
             </p>
           </div>
         </div>
@@ -110,12 +107,8 @@ export default function AboutMe() {
 function StatCard({ value, label }) {
   return (
     <div className="flex flex-col items-center text-center p-6">
-      <TextRedShadow>
-        {value}
-      </TextRedShadow>
-      <p className="text-[18px] text-[#aaa]">
-        {label}
-      </p>
+      <TextRedShadow>{value}</TextRedShadow>
+      <p className="text-[18px] text-[#aaa]">{label}</p>
     </div>
   );
 }
@@ -132,19 +125,19 @@ function PersonalInfo() {
         >
           <TextRedShadow>danilojose.1d@gmail.com</TextRedShadow>
         </a>
-      )
+      ),
     },
-    { label: "Idade", value: "20 anos" },
-    { label: "De", value: "Pau dos Ferros, Rio Grande do Norte, Brasil" }
+    { label: "Idade", value: "21 anos" },
+    { label: "De", value: "Pau dos Ferros, Rio Grande do Norte, Brasil" },
   ];
 
   return (
     <div className="flex flex-col gap-5 text-xl w-full md:w-auto">
-      {personalData.map(item =>
+      {personalData.map((item) => (
         <p key={item.label} className="border-b border-[#303030] py-2">
           <i className="font-bold text-white">{item.label}:</i> {item.value}
         </p>
-      )}
+      ))}
     </div>
   );
 }

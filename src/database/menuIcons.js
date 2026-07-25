@@ -4,6 +4,5 @@ export const menuItems = [
   { name: "Experiência", href: "experience" },
   { name: "Conquistas", href: "achievements" },
   { name: "Projetos", href: "projects" },
-  { name: "Feedbacks", href: "reviews" },
   { name: "Contato", href: "contact" },
 ];
