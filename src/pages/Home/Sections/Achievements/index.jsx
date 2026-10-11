@@ -1,7 +1,10 @@
 import { motion } from "motion/react";
 import SoftwareCard from "../../../../components/Achievements/SoftwareCard";
 import { motionConfig } from "../../../../utils/functions";
-import { certificates, softwareRegistrations } from "../../../../database/achievements";
+import {
+  certificates,
+  softwareRegistrations,
+} from "../../../../database/achievements";
 import { FaCertificate, FaCheckCircle, FaCode, FaStar } from "react-icons/fa";
 import TextRedShadow from "../../../../components/Global/TextRedShadow";
 import CertificateCard from "../../../../components/Achievements/CertificateCard";

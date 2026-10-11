@@ -1,31 +1,14 @@
 import TitleSections from "../../../../components/Global/TitleSections";
 
-import Carcara from "/HabilidadesIcons/Carcara.webp";
-import Chronos from "/HabilidadesIcons/Chronos.svg";
 import { motion } from "framer-motion";
 import { motionConfig } from "../../../../utils/functions";
 import { habilidades } from "../../../../database/Habilidades";
 import TextRedShadow from "../../../../components/Global/TextRedShadow";
 import { useState } from "react";
 import BrutalistButton from "../../../../components/Global/BrutalistButton";
+import { experiences } from "../../../../database/Experience";
 
 export default function Experience() {
-  const experiences = [
-    {
-      logo: Chronos,
-      cargo: "Desenvolvedor Front End",
-      project: "Chronos - Web Soluções",
-      start: "Jan/2025",
-      end: "Até o Momento",
-    },
-    {
-      logo: Carcara,
-      cargo: "Desenvolvedor de Software",
-      project: "Projeto Carcará - UFERSA",
-      start: "Ago/2024",
-      end: "Até o Momento",
-    },
-  ];
 
   return (
     <section
@@ -51,14 +34,16 @@ function ExperienceCard({ logo, cargo, project, start, end }) {
       className="relative w-[500px] max-w-full min-w-[300px] backdrop-blur-md shadow-lg border border-white/3 pt-16 px-6 pb-8 rounded-3xl mt-4 flex flex-col items-center gap-5 transition-all duration-300 hover:scale-[1.02]"
     >
       {/* Ícone flutuante com glow */}
-      <div className="absolute -top-12 py-4 px-8 rounded-t-2xl flex items-center justify-center">
-        <img
-          src={logo}
-          alt={project ? `Logo do projeto ${project}` : "Logo do projeto"}
-          className="h-14 object-contain"
-          loading="lazy"
-        />
-      </div>
+      {logo && (
+        <div className="absolute -top-12 py-4 px-8 rounded-t-2xl flex items-center justify-center">
+          <img
+            src={logo}
+            alt={project ? `Logo do projeto ${project}` : "Logo do projeto"}
+            className="h-14 object-contain"
+            loading="lazy"
+          />
+        </div>
+      )}
 
       {/* Cargo */}
       <TextRedShadow className="text-xl font-semibold tracking-wide text-center">
@@ -100,8 +85,6 @@ function HardSkills() {
   );
 }
 
-
-
 function HardSkillCard({ nome, icon: Icon, description }) {
   const [showModal, setShowModal] = useState(false);
 
@@ -115,7 +98,7 @@ function HardSkillCard({ nome, icon: Icon, description }) {
       />
     </>
   );
-}       
+}
 
 function SoftSkills() {
   const skills = [

@@ -4,6 +4,7 @@ import ELI from "../assets/Projects/ELI.png";
 import UfersaDev from "../assets/Projects/UfersaDev.png";
 import Rebeca from "../assets/Projects/Rebeca.png"; // <-- Adicionado
 import VoluntariosLeitura from "../assets/Projects/VoluntariosLeitura.png"; // <-- Adicionado
+import AWSSBG from "../assets/Projects/AWSSBGUFERSA.png"
 
 export const ProjectsInfo = [
   {
@@ -21,31 +22,29 @@ export const ProjectsInfo = [
     stacks: ["React", "Tailwind CSS"],
     authors: ["José Danilo", "Prof. Walber José"],
     sourceCode: false,
-    url: "https://www.frequencia-academica.ufersa.dev.br",
-    playStoreUrl:
-      "https://play.google.com/store/apps/details?id=br.dev.ufersa.frequencia_academica.www.twa",
+    // url: "https://www.frequencia-academica.ufersa.dev.br",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=br.dev.ufersa.frequencia_academica.www.twa",
   },
-  {
-    id: 2,
-    title: "Landing page - Projeto Carcará",
-    shortDescription: "Página institucional do Projeto Carcará",
-    description: [
-      "Landing page desenvolvida para o <strong>Projeto Carcará da UFERSA</strong>, com o objetivo de apresentar o projeto, seus objetivos e membros envolvidos.",
-      "A página contém <strong>informações institucionais, seções descritivas e design responsivo</strong> para diferentes dispositivos.",
-      "Foi desenvolvida com foco em <strong>acessibilidade e performance</strong>, servindo como canal de comunicação oficial do projeto.",
-    ],
-    image: Carcara,
-    sourceCode: false,
-    stacks: ["React", "Tailwind CSS"],
-    authors: ["José Danilo", "Yuri Nascimento"],
-    linkRepositorio: "https://github.com/JoseDaniloS/Landing-page-Carcara",
-    url: "https://carcara.ufersa.dev.br",
-  },
+  // {
+  //   id: 2,
+  //   title: "Landing page - Projeto Carcará",
+  //   shortDescription: "Página institucional do Projeto Carcará",
+  //   description: [
+  //     "Landing page desenvolvida para o <strong>Projeto Carcará da UFERSA</strong>, com o objetivo de apresentar o projeto, seus objetivos e membros envolvidos.",
+  //     "A página contém <strong>informações institucionais, seções descritivas e design responsivo</strong> para diferentes dispositivos.",
+  //     "Foi desenvolvida com foco em <strong>acessibilidade e performance</strong>, servindo como canal de comunicação oficial do projeto.",
+  //   ],
+  //   image: Carcara,
+  //   sourceCode: false,
+  //   stacks: ["React", "Tailwind CSS"],
+  //   authors: ["José Danilo", "Yuri Nascimento"],
+  //   linkRepositorio: "https://github.com/JoseDaniloS/Landing-page-Carcara",
+  //   url: "https://carcara.ufersa.dev.br",
+  // },
   {
     id: 3,
     title: "Portal de Notícias - ELI",
-    shortDescription:
-      "Portal informativo do Ecossistema Local de Inovação de Pau dos Ferros",
+    shortDescription: "Portal informativo do Ecossistema Local de Inovação de Pau dos Ferros",
     description: [
       "Desenvolvido para o <strong>Ecossistema Local de Inovação (ELI) de Pau dos Ferros</strong>, este portal tem como objetivo divulgar ações, eventos, notícias e oportunidades relacionadas à inovação, empreendedorismo e tecnologia na região.",
       "A plataforma <strong>centraliza as informações do ecossistema</strong>, promovendo visibilidade às iniciativas locais e fortalecendo a conexão entre instituições, startups, pesquisadores e a comunidade em geral.",
@@ -84,41 +83,39 @@ export const ProjectsInfo = [
       "Ambiente de produção totalmente conteinerizado com <strong>Docker</strong>, utilizando o <strong>Nginx como proxy reverso</strong> para gerenciamento de tráfego, segurança e entrega de alta performance.",
     ],
     image: Rebeca,
-    stacks: [
-      "React",
-      "Tailwind CSS",
-      "Strapi",
-      "Docker",
-      "Nginx",
-      "GitHub Actions",
-    ],
+    stacks: ["React", "Tailwind CSS", "Strapi", "Docker", "Nginx", "GitHub Actions"],
     authors: ["José Danilo"],
     sourceCode: false,
     url: "https://redenacionalrebeca.icmc.usp.br", // Ajuste a URL se necessário
   },
-  // {
-  //   id: 6,
-  //   title: "Voluntários da Leitura",
-  //   shortDescription: "Plataforma de incentivo e gestão de projetos de leitura",
-  //   description: [
-  //     "Sistema voltado para a organização, engajamento e acompanhamento de ações ligadas ao projeto <strong>Voluntários da Leitura</strong>.",
-  //     "Front-end moderno e de alta disponibilidade publicado e distribuído globalmente através do <strong>AWS Amplify</strong>.",
-  //     "Back-end robusto estruturado com o <strong>Strapi CMS</strong>, utilizando o <strong>Amazon ECR (Elastic Container Registry)</strong> para o gerenciamento das imagens de contêineres e distribuído sob um <strong>Application Load Balancer (ALB)</strong> para alta disponibilidade e escalabilidade.",
-  //     "Persistência de dados configurada de forma isolada e segura através do <strong>Amazon RDS</strong> como banco de dados relacional e roteamento de tráfego inteligente gerenciado pelo <strong>AWS Route 53</strong>.",
-  //   ],
-  //   image: VoluntariosLeitura,
-  //   stacks: [
-  //     "React",
-  //     "Tailwind CSS",
-  //     "Strapi",
-  //     "AWS Amplify",
-  //     "AWS Route 53",
-  //     "Amazon ECR",
-  //     "Amazon RDS",
-  //     "Elastic Load Balancing",
-  //   ],
-  //   authors: ["José Danilo"],
-  //   sourceCode: false,
-  //   url: "https://voluntariosdaleitura.ufersa.dev.br", // Ajuste a URL se necessário
-  // },
+
+  {
+    id: 6,
+    title: "AWS Student Builder Group — UFERSA",
+    shortDescription: "Plataforma de aprendizagem, gamificação e engajamento da comunidade AWS na UFERSA",
+    description: [
+      "Plataforma desenvolvida para o <strong>AWS Student Builder Group (AWS SBG) da UFERSA — Campus Pau dos Ferros</strong>, com o objetivo de incentivar o aprendizado prático em computação em nuvem e fortalecer a comunidade acadêmica de tecnologia.",
+      "O portal conta com um <strong>passaporte digital do membro</strong>, ranking de participação, sistema de pontos e conquistas, trilhas de aprendizagem, acompanhamento de certificações e microcredenciais, além de gerenciamento de eventos e atividades.",
+      "A infraestrutura utiliza uma arquitetura <strong>serverless na AWS</strong>, integrando serviços como <strong>Amazon Cognito, AWS Lambda, Amazon API Gateway, Amazon DynamoDB, Amazon S3, Amazon SQS e Amazon SNS</strong> para autenticação, processamento de eventos, persistência de dados, envio de notificações e recebimento de submissões de atividades práticas.",
+      "O projeto também incorpora recursos de gamificação e mecanismos de validação de atividades, incentivando a participação contínua dos membros e tornando o progresso de aprendizagem mais transparente e mensurável.",
+      "Desenvolvido para aproximar estudantes do ecossistema AWS por meio de atividades práticas, experiências colaborativas e acompanhamento da evolução técnica da comunidade.",
+    ],
+    image: AWSSBG,
+    stacks: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "AWS Lambda",
+      "Amazon API Gateway",
+      "Amazon DynamoDB",
+      "Amazon Cognito",
+      "Amazon S3",
+      "Amazon SQS",
+      "Amazon SNS",
+      "AWS SAM",
+    ],
+    authors: ["José Danilo"],
+    sourceCode: false,
+    url: "https://awssbg.ufersa.dev.br/",
+  },
 ];

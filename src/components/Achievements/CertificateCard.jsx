@@ -1,7 +1,13 @@
 import { motion } from "motion/react";
 import { formatDate, motionConfig } from "../../utils/functions";
 import TextRedShadow from "../Global/TextRedShadow";
-import { FaAward, FaCalendarAlt, FaCheckCircle, FaExternalLinkAlt, FaFileAlt } from "react-icons/fa";
+import {
+  FaAward,
+  FaCalendarAlt,
+  FaCheckCircle,
+  FaExternalLinkAlt,
+  FaFileAlt,
+} from "react-icons/fa";
 // Componente para cada Certificado
 export default function CertificateCard({ cert, index }) {
   return (
@@ -60,9 +66,11 @@ export default function CertificateCard({ cert, index }) {
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="px-3 py-1 neon-red-button text-white text-xs font-semibold rounded-lg">
-            {cert.level}
-          </span>
+          {cert?.level && (
+            <span className="px-3 py-1 neon-red-button text-white text-xs font-semibold rounded-lg">
+              {cert.level}
+            </span>
+          )}
 
           <a
             className="flex items-center gap-1 text-[#FF1744] hover:text-[#FF3D3D] text-sm font-medium transition-colors transform duration-300 hover:scale-105"

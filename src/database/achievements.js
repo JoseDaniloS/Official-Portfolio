@@ -1,5 +1,10 @@
 // Dados dos registros de software
 import InsigniaMercadoPago from "../assets/Insignia_MercadoPago.svg";
+import InsigniaCloudPractitioner from "../assets/Badges/aws-certified-cloud-practitioner.png";
+import InsigniaAwsServerlessDemonstrated from "../assets/Badges/aws-serverless-demonstrated.png";
+import InsigniaAwsApplicationNetworkingDemonstrated from "../assets/Badges/aws-application-networking-demonstrated.png";
+import InsigniaAwsIncidentResponse from "../assets/Badges/aws-incident-response-demonstrated.png";
+import InsigniaAwsDataLakehouse from "../assets/Badges/aws-data-lakehouse-demonstrated.png";
 
 export const softwareRegistrations = [
   {
@@ -87,5 +92,60 @@ export const certificates = [
     level: "Parceiros",
     status: "Ativo",
     link: "https://www.mercadopago.com.br/developers/panel/developer-program/certification/cert_ccba35bb7a5011f0861306528aba163c",
+  },
+  {
+    id: 2,
+    title: "AWS Cloud Practitioner - CLF02",
+    issuer: "Amazon Web Services",
+    insigne: InsigniaCloudPractitioner,
+    date: "08-28-2026",
+    credentialId: "1fb760bb-33ea-438b-9015-b25eebaf0b75",
+    validUntil: "08-28-2029",
+    status: "Ativo",
+    link: "https://www.credly.com/badges/1fb760bb-33ea-438b-9015-b25eebaf0b75/public_url",
+  },
+  {
+    id: 3,
+    title: "AWS Application Networking Demonstrated",
+    issuer: "Amazon Web Services",
+    insigne: InsigniaAwsApplicationNetworkingDemonstrated,
+    date: "09-09-2026",
+    credentialId: "4d6231f6-46c4-4c14-bd2a-07663dcc0288",
+    validUntil: "09-09-2027",
+    status: "Ativo",
+    link: "https://www.credly.com/badges/4d6231f6-46c4-4c14-bd2a-07663dcc0288/public_url",
+  },
+  {
+    id: 4,
+    title: "AWS Serverless Demonstrated",
+    issuer: "Amazon Web Services",
+    insigne: InsigniaAwsServerlessDemonstrated,
+    date: "06-08-2026",
+    credentialId: "f734c031-de2b-4b80-96e1-e90c5706edb7",
+    validUntil: "06-08-2027",
+    status: "Ativo",
+    link: "https://www.credly.com/badges/f734c031-de2b-4b80-96e1-e90c5706edb7/public_url",
+  },
+  {
+    id: 5,
+    title: "AWS Incident Response Demonstrated",
+    issuer: "Amazon Web Services",
+    insigne: InsigniaAwsIncidentResponse,
+    date: "09-11-2026",
+    credentialId: "894d3ff8-8096-4e81-9a09-be4deca67a47",
+    validUntil: "09-11-2027",
+    status: "Ativo",
+    link: "https://www.credly.com/badges/894d3ff8-8096-4e81-9a09-be4deca67a47/public_url",
+  },
+  {
+    id: 6,
+    title: "AWS Data Lakehouse Demonstrated",
+    issuer: "Amazon Web Services",
+    insigne: InsigniaAwsDataLakehouse,
+    date: "09-14-2026",
+    credentialId: "cdc70d28-2082-46b7-9584-59dd7c1bae74",
+    validUntil: "09-14-2027",
+    status: "Ativo",
+    link: "https://www.credly.com/badges/cdc70d28-2082-46b7-9584-59dd7c1bae74/public_url",
   },
 ];

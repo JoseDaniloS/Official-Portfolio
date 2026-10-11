@@ -38,10 +38,6 @@ export default function Center() {
       >
         <img src={Danilo} alt="Foto de José Danilo" className="lg:hidden" />
         {/* Subtítulo de Apresentação */}
-        <h2 className="text-2xl max-md:text-md mt-4 font-normal">
-          Sou <TextRedShadow>José Danilo</TextRedShadow>
-          , Desenvolvedor Front End.
-        </h2>
 
         {/* Título Principal: "Construindo o futuro" com a palavra animada em destaque */}
         <h1 className="text-3xl max-md:text-md">

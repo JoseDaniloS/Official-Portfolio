@@ -18,61 +18,61 @@ export default function AboutMe() {
         <div className="w-full md:w-5/6 flex flex-col gap-6 items-center text-left">
           <div className="flex flex-col gap-5 md:text-left">
             <h2 className="text-3xl max-md:text-2xl text-white font-bold">
-              Eu sou <TextRedShadow>José Danilo</TextRedShadow>, um
-              desenvolvedor front-end CEO da
-              <TextRedShadow> Chronos - Web Soluções</TextRedShadow> e
-              pesquisador no projeto Carcará.
+              Eu sou <TextRedShadow>José Danilo</TextRedShadow>, Full Stack
+              Software Engineer e fundador da{" "}
+              <TextRedShadow>Chronos - Web Soluções</TextRedShadow>.
             </h2>
             <p>
-              Sou apaixonado por{" "}
-              <span className="font-bold text-white">desenvolvimento web</span>{" "}
-              e{" "}
-              <span className="font-bold text-white">computação em nuvem</span>,
-              sempre em busca de criar soluções digitais inovadoras e
-              eficientes. Atualmente, atuo como{" "}
-              <span className="font-bold text-white">
-                desenvolvedor front-end
-              </span>
-              ,{" "}
-              <span className="font-bold text-white">
-                especialista em computação em nuvem
-              </span>{" "}
-              e líder da{" "}
+              Comecei programando por gostar de ver uma ideia sair do papel e
+              virar algo que as pessoas realmente usam. Isso me levou a fundar a{" "}
               <span className="font-bold text-white">
                 Chronos - Web Soluções
               </span>
-              , onde ajudo empresas e profissionais a transformar ideias em
-              produtos digitais de alto impacto.
+              , onde atuo como{" "}
+              <span className="font-bold text-white">
+                desenvolvedor full stack
+              </span>{" "}
+              e{" "}
+              <span className="font-bold text-white">
+                especialista em computação em nuvem
+              </span>
+              , ajudando empresas e profissionais a transformar ideias em
+              produtos digitais reais.
             </p>
             <p>
               Nosso carro-chefe é o{" "}
               <span className="font-bold text-white">Chronos Payments</span>, um{" "}
               <span className="font-bold text-white">
                 gateway de pagamentos completo
-              </span>
-              , com{" "}
+              </span>{" "}
+              com{" "}
               <span className="font-bold text-white">gráficos de receita</span>,
               gestão de{" "}
               <span className="font-bold text-white">planos de assinatura</span>{" "}
               e{" "}
               <span className="font-bold text-white">
-                pagamentos individuais
+                pagamentos individuais via Pix
               </span>
-              , entre outras funcionalidades pensadas para dar visibilidade e
-              controle financeiro aos nossos clientes.
+              , já em uso por clientes reais.
             </p>
             <p>
-              Além disso, sou graduando em{" "}
+              Também sou{" "}
+              <span className="font-bold text-white">
+                pesquisador no Projeto Carcará
+              </span>
+              , graduando em{" "}
               <span className="font-bold text-white">
                 Tecnologia da Informação pela UFERSA
               </span>{" "}
-              e também concluí a formação em{" "}
+              e Técnico em Informática formado pelo{" "}
+              <span className="font-bold text-white">Balbina Viana Arrais</span>
+              . Além disso, sou{" "}
               <span className="font-bold text-white">
-                Técnico em Informática no Balbina Viana Arrais
+                professor de AWS Fundamentos da Nuvem na UFERSA
               </span>
-              . Minha trajetória acadêmica e profissional reflete o compromisso
-              em unir conhecimento técnico e visão prática para gerar soluções
-              relevantes.
+              , levando para a sala de aula a mesma prática que aplico nos meus
+              projetos. Gosto de unir conhecimento técnico e visão prática para
+              gerar soluções que realmente funcionam.
             </p>
           </div>
         </div>
