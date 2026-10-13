@@ -14,7 +14,7 @@ export function ProjectContent({ projectsData, onMoreDetails }) {
         src={projectsData.image}
         alt={projectsData.title}
         loading="lazy"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
       />
 
       {/* Overlay com gradiente aprimorado */}

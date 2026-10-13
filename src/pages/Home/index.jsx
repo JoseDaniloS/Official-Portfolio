@@ -4,6 +4,7 @@ import React, { lazy } from "react";
 const Header = lazy(() => import("../../layout/Header"));
 const Aside = lazy(() => import("../../layout/Aside"));
 const ReturnToTop = lazy(() => import("../../components/Global/ReturnToTop"));
+const ScrollProgress = lazy(() => import("../../components/Global/ScrollProgress"));
 const ThreeBackground = lazy(() =>
   import("../../components/Global/ThreeBackground")
 );
@@ -24,6 +25,7 @@ export default function Home() {
     <TitleAnimateForEntry>
       <main className="w-full h-full justify-end flex">
         <ThreeBackground />
+        <ScrollProgress />
         <ReturnToTop />
         <Header />
         <Aside />

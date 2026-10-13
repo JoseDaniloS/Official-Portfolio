@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -21,7 +22,7 @@ export default function Projects() {
       id="projects"
       className="w-full min-h-screen  flex flex-col items-center justify-around py-10"
     >
-      <TitleSections text="Projetos" />
+      <TitleSections text="Projetos" label="// 04" />
 
       <Swiper
         spaceBetween={30}
@@ -46,11 +47,15 @@ export default function Projects() {
 
       <CustomPagination size={ProjectsInfo.length} activeIndex={activeIndex} />
 
-      {selectedProject &&
-        <ProjectModal
-          projectsData={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />}
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            key={selectedProject.id}
+            projectsData={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

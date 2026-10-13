@@ -4,7 +4,7 @@ import ELI from "../assets/Projects/ELI.png";
 import UfersaDev from "../assets/Projects/UfersaDev.png";
 import Rebeca from "../assets/Projects/Rebeca.png"; // <-- Adicionado
 import VoluntariosLeitura from "../assets/Projects/VoluntariosLeitura.png"; // <-- Adicionado
-import AWSSBG from "../assets/Projects/AWSSBGUFERSA.png"
+import AWSSBG from "../assets/Projects/AWSSBGUFERSA.png";
 
 export const ProjectsInfo = [
   {
@@ -12,14 +12,15 @@ export const ProjectsInfo = [
     title: "Frequência Acadêmica - UFERSA",
     shortDescription: "Aplicativo para controle de frequência acadêmica",
     description: [
-      "Sistema web desenvolvido para automatizar o processo de registro de frequência de bolsistas acadêmicos na UFERSA.",
+      "Sistema web que <strong>substituiu o controle manual de frequência de cerca de 50 bolsistas acadêmicos e esportivos</strong> da UFERSA, com calendário inteligente que bloqueia automaticamente finais de semana e feriados.",
+      "Gera automaticamente as <strong>folhas de frequência mensais</strong>, eliminando trabalho manual recorrente da equipe administrativa.",
       "A aplicação permite que bolsistas registrem, acompanhem e validem mensalmente suas atividades de forma simples, segura e eficiente, <strong>otimizando o controle das bolsas institucionais e reduzindo a burocracia</strong>.",
       "O software foi oficialmente registrado no <strong>Instituto Nacional da Propriedade Industrial (INPI)</strong>, garantindo a proteção de sua propriedade intelectual.",
       "<strong>Lançado na Google Play Store em 4 de abril de 2025</strong>, o aplicativo agora está disponível para dispositivos Android, ampliando seu alcance e acessibilidade.",
       "Idealizado para <strong>facilitar a gestão e o acompanhamento das atividades acadêmicas</strong>.",
     ],
     image: Frequencia,
-    stacks: ["React", "Tailwind CSS"],
+    stacks: ["React", "JavaScript", "Tailwind CSS"],
     authors: ["José Danilo", "Prof. Walber José"],
     sourceCode: false,
     // url: "https://www.frequencia-academica.ufersa.dev.br",

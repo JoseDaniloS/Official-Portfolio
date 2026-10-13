@@ -1,5 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { setBackgroundPaused } from "../../utils/functions";
 import {
   FaTimes,
   FaReact,
@@ -19,19 +20,43 @@ import {
   SiExpress,
   SiMongodb,
   SiTypescript,
+  SiAwslambda,
+  SiAmazonapigateway,
+  SiAmazondynamodb,
+  SiAmazoncognito,
+  SiAmazons3,
+  SiAmazonsqs,
+  SiAmazonec2,
+  SiAwselasticloadbalancing,
+  SiDocker,
+  SiNginx,
+  SiGithubactions,
+  SiStrapi,
 } from "react-icons/si";
+import { FaBullhorn, FaCubes, FaBoxesStacked } from "react-icons/fa6";
+
+const awsIcon = (Icon) => <Icon size={22} className="text-[#FF9900]" />;
+
+// Animação curta só com opacity/transform (barata para a GPU)
+const backdropVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.25 } },
+  exit: { opacity: 0, transition: { duration: 0.2, delay: 0.05 } },
+};
 
 const modalVariants = {
-  initial: { opacity: 0, y: "100vh" },
+  initial: { opacity: 0, y: 40, scale: 0.97 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", damping: 25, stiffness: 500 },
+    scale: 1,
+    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
   },
   exit: {
     opacity: 0,
-    y: "100vh",
-    transition: { duration: 0.3, ease: "easeIn" },
+    y: 24,
+    scale: 0.98,
+    transition: { duration: 0.2, ease: "easeIn" },
   },
 };
 
@@ -51,6 +76,21 @@ const stackIcons = {
   Git: <FaGitAlt size={24} className="text-orange-600" />,
   GitHub: <FaGithub size={24} className="text-gray-400" />,
   Figma: <FaFigma size={24} className="text-purple-500" />,
+  "AWS Lambda": awsIcon(SiAwslambda),
+  "Amazon API Gateway": awsIcon(SiAmazonapigateway),
+  "Amazon DynamoDB": awsIcon(SiAmazondynamodb),
+  "Amazon Cognito": awsIcon(SiAmazoncognito),
+  "Amazon S3": awsIcon(SiAmazons3),
+  "Amazon SQS": awsIcon(SiAmazonsqs),
+  "Amazon SNS": awsIcon(FaBullhorn),
+  "AWS SAM": awsIcon(FaCubes),
+  "Amazon EC2": awsIcon(SiAmazonec2),
+  "Amazon ECR": awsIcon(FaBoxesStacked),
+  "Load Balancer": awsIcon(SiAwselasticloadbalancing),
+  Docker: <SiDocker size={22} className="text-sky-400" />,
+  Nginx: <SiNginx size={22} className="text-green-500" />,
+  "GitHub Actions": <SiGithubactions size={22} className="text-blue-400" />,
+  Strapi: <SiStrapi size={22} className="text-indigo-400" />,
 };
 
 export function ProjectModal({ projectsData, onClose }) {
@@ -62,28 +102,36 @@ export function ProjectModal({ projectsData, onClose }) {
       }
     };
     document.body.style.overflow = "hidden";
+    setBackgroundPaused(true);
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = ""; // Restaura o scroll
+      setBackgroundPaused(false);
     };
   }, [onClose]);
 
   if (!projectsData) return null;
 
   return (
-    <AnimatePresence>
-      <div
-        onClick={onClose}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-      >
+    <motion.div
+      variants={backdropVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={projectsData.title}
+      className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 p-4"
+    >
         <motion.div
           variants={modalVariants}
           initial="initial"
           animate="animate"
           exit="exit"
           onClick={(e) => e.stopPropagation()}
-          className="relative h-[90vh] max-w-6xl overflow-hidden rounded-xl bg-gray-900 shadow-2xl ring-1 ring-white/10"
+          className="relative h-[90vh] max-w-6xl overflow-hidden rounded-xl bg-gray-900 shadow-2xl ring-1 ring-white/10 will-change-transform"
         >
           {/* Botão de fechar */}
           <button
@@ -101,6 +149,7 @@ export function ProjectModal({ projectsData, onClose }) {
               <img
                 src={projectsData.image}
                 alt={projectsData.title}
+                decoding="async"
                 className="h-full w-full object-cover object-left"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
@@ -211,7 +260,6 @@ export function ProjectModal({ projectsData, onClose }) {
             </div>
           </div>
         </motion.div>
-      </div>
-    </AnimatePresence>
+    </motion.div>
   );
 }

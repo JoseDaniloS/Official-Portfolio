@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { formatDate, motionConfig } from "../../utils/functions";
+import { formatDate, staggerConfig } from "../../utils/functions";
 import { FaCalendarAlt, FaCheckCircle, FaFileAlt, FaShieldAlt } from "react-icons/fa";
 import TextRedShadow from "../Global/TextRedShadow";
 // Componente para cada Software
@@ -7,11 +7,9 @@ export default function SoftwareCard({ software, index }) {
   return (
     <motion.div
       key={software.id}
-      {...motionConfig}
-      transition={{ delay: index * 0.1 }}
-      className="relative backdrop-blur-md shadow-lg border border-white/30 p-6 rounded-3xl transition-all duration-300 hover:scale-[1.02] hover:border-[#FF1744]/60"
+      {...staggerConfig(index)}
+      className="relative backdrop-blur-md bg-white/[0.03] shadow-lg border border-white/30 p-6 rounded-3xl transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[#FF1744]/60"
     >
-      <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-red-500/60 transition duration-500 pointer-events-none" />
 
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">

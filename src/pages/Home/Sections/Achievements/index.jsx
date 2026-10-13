@@ -17,11 +17,11 @@ export default function Achievements() {
       id="achievements"
       className="w-full min-h-screen flex flex-col items-center justify-around py-16"
     >
-      <TitleSections text="Conquistas" />
+      <TitleSections text="Conquistas" label="// 03" />
 
       <div className="md:w-[80%] max-md:w-[90vw] space-y-16">
         {/* Seção de Registros de Software */}
-        <motion.div {...motionConfig} className="w-full">
+        <div className="w-full">
           <div className="flex items-center gap-3 mb-8 justify-center">
             <div className="p-3 backdrop-blur-md border border-white/20 rounded-full">
               <FaCode className="w-6 h-6 text-[#FF1744]" />
@@ -40,10 +40,10 @@ export default function Achievements() {
               />
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Seção de Certificados */}
-        <motion.div {...motionConfig} className="w-full">
+        <div className="w-full">
           <div className="flex items-center gap-3 mb-8 justify-center">
             <div className="p-3 backdrop-blur-md border border-white/20 rounded-full">
               <FaCertificate className="w-6 h-6 text-[#FF1744]" />
@@ -58,12 +58,12 @@ export default function Achievements() {
               <CertificateCard key={cert.id} cert={cert} index={index} />
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Estatísticas */}
         <motion.div
           {...motionConfig}
-          className="w-full relative backdrop-blur-md shadow-lg border border-white/30 rounded-3xl p-8 transition-all duration-300 hover:border-[#FF1744]/60"
+          className="w-full relative backdrop-blur-md bg-white/[0.03] shadow-lg border border-white/30 rounded-3xl p-8 transition-[border-color] duration-300 hover:border-[#FF1744]/60"
         >
           <div className="text-center mb-8">
             <TextRedShadow className="text-2xl font-extrabold mb-2">

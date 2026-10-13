@@ -11,7 +11,7 @@ export default function Contacts() {
       id="contact"
       className="w-full min-h-screen flex flex-col items-center justify-center py-20 gap-10 px-6 text-white"
     >
-      <TitleSections text="Contato" />
+      <TitleSections text="Contato" label="// 05" />
 
       <motion.p
         {...motionConfig}
